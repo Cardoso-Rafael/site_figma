@@ -434,3 +434,58 @@ body {
     width: 100%;
   }
 }
+
+/* ADICIONE ESTE CÓDIGO AO SEU ARQUIVO STYLE.CSS */
+.social-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 40px 0 20px;
+  width: 100%;
+}
+
+.btn-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm, 8px);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition, all 0.3s ease);
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #000000;
+}
+
+.btn-whatsapp:hover {
+  background-color: #20ba5a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+.btn-linkedin {
+  background-color: #0A66C2;
+  color: #FFFFFF;
+}
+
+.btn-linkedin:hover {
+  background-color: #084e96;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(10, 102, 194, 0.3);
+}
+
+@media (max-width: 600px) {
+  .social-contact {
+    flex-direction: column;
+  }
+  
+  .btn-social {
+    width: 100%;
+    justify-content: center;
+  }
+}
