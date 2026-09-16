@@ -1,122 +1,120 @@
-<!-- Define para o navegador que este é um documento HTML5 -->
 <!DOCTYPE html>
-<!-- Define a língua da página como português do Brasil -->
 <html lang="pt-BR">
 <head>
-  <!-- Define a codificação de caracteres para suportar acentos e caracteres especiais -->
   <meta charset="UTF-8">
-  <!-- Configura a viewport para garantir que o site seja responsivo em telas de celulares -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Título da página que aparece na aba do navegador -->
   <title>COBR!TO - Treine como um deus</title>
-  <!-- Vincula o arquivo CSS externo de estilos à página HTML -->
-  <link rel="stylesheet" href="style.css">
-  <!-- Pré-conecta ao servidor do Google Fonts para otimizar o carregamento das fontes -->
+
+  <!-- 🌐 META TAGS OPEN GRAPH (Para WhatsApp, Redes Sociais e Compartilhamento) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="COBR!TO — Roupas de Academia Forjadas para Deuses">
+  <meta property="og:description" content="Tecnologia de Asgard e desempenho do Olimpo. Garanta seu conjunto exclusivo com desconto de lançamento!">
+  <meta property="og:image" content="https://seu-site.vercel.app/conjunto_de_roupas.PNG">
+  <meta property="og:url" content="https://seu-site.vercel.app">
+
+  <!-- 🚀 FAVICON (Ícone da Aba do Navegador) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- Conexão com Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Importa a fonte 'Plus Jakarta Sans' com as espessuras 400, 500, 600, 700 e 800 -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Vinculação do arquivo de estilos CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Início do cabeçalho da página (Header) -->
+  <!-- 📌 CABEÇALHO COM NAVEGAÇÃO -->
   <header class="header">
-    <!-- Logotipo da marca com uma tag span para destacar o ponto em outra cor -->
-    <div class="logo">COBR!TO<span>.</span></div>
-    <!-- Menu de navegação superior -->
+    <a href="#" class="logo">COBR!TO<span>.</span></a>
     <nav class="nav">
-      <!-- Link interno para a seção de benefícios -->
       <a href="#beneficios">Benefícios</a>
-      <!-- Link interno para a seção de especificações -->
       <a href="#especificacoes">Especificações</a>
+      <a href="#desconto">Cupom Divino</a>
     </nav>
-    <!-- Botão de ação do cabeçalho no estilo outline -->
     <a href="#comprar" class="btn-header">COMPRAR NOW</a>
   </header>
 
-  <!-- Início do bloco principal em destaque (Hero Section) -->
-  <main class="hero">
-    <!-- Coluna da esquerda com textos, preço e botão de compra -->
-    <div class="hero-content">
-      <!-- Tag/Badge pequena destacando o lançamento -->
-      <span class="badge">NOVO LANÇAMENTO</span>
-      <!-- Título principal da landing page -->
-      <h1>Forjadas para treinar como um deus ⚡</h1>
-      <!-- Descrição rápida do produto -->
-      <p class="description">
-        Roupas de academia com tecidos de alta qualidade e tecnologia de Asgard, forjadas com a força e o raio de Thor. Desempenho, conforto e estilo dignos dos deuses do Olimpo.
-      </p>
+  <!-- 🚀 SEÇÃO HERO (Destaque Principal do Produto) -->
+  <main>
+    <section class="hero" id="comprar">
+      <div class="hero-content">
+        <span class="badge">✦ NOVO LANÇAMENTO 2026</span>
+        <h1>Forjadas para treinar como um deus ⚡</h1>
+        <p class="description">
+          Roupas de academia com tecidos de alta qualidade e tecnologia de Asgard, forjadas com a força e o raio de Thor. Desempenho, conforto e estilo dignos dos deuses do Olimpo.
+        </p>
 
-      <!-- Card container da caixa de checkout rápido -->
-      <div class="card-checkout">
-        <!-- Linha superior do card com o nome do produto e o valor -->
-        <div class="checkout-header">
-          <!-- Nome curto da oferta -->
-          <span class="product-name">Conjunto Exclusivo</span>
-          <!-- Preço com tag separada para o símbolo da moeda -->
-          <div class="price"><span class="currency">R$</span> 359,99</div>
+        <!-- CARD DE CHECKOUT / OFERTA -->
+        <div class="card-checkout">
+          <div class="checkout-header">
+            <span class="product-name">Conjunto Exclusivo</span>
+            <div class="price"><span class="currency">R$</span> 359,99</div>
+          </div>
+          <button class="btn-primary">Garantir o Meu 🚀</button>
         </div>
-        <!-- Botão de ação principal (Call to Action) -->
-        <button class="btn-primary">Garantir o Meu 🚀</button>
       </div>
-    </div>
 
-    <!-- Coluna da direita com a imagem do produto -->
-    <div class="hero-image">
-      <!-- Container que segura e aplica a moldura na foto -->
-      <div class="image-wrapper">
-        <!-- Elemento de imagem (substitua o caminho do src pelo arquivo real da imagem) -->
-        <img src="conjunto_de_roupas.PNG" alt="Conjunto de Roupa COBR!TO">
+      <!-- IMAGEM DO PRODUTO COM FIGURATION SEMÂNTICA -->
+      <div class="hero-image">
+        <figure class="image-wrapper">
+          <img src="conjunto_de_roupas.PNG" alt="Conjunto de Roupa de Academia COBR!TO em Ouro, Branco e Prata">
+          <figcaption class="sr-only">Conjunto de roupa de alta performance COBR!TO</figcaption>
+        </figure>
       </div>
-    </div>
+    </section>
+
+    <!-- 🎁 SEÇÃO DE BENEFÍCIOS (LAYOUT RESPONSIVO) -->
+    <section class="benefits-section" id="beneficios">
+      <div class="section-tag">• PERFORMANCE DIVINA</div>
+      <h2 class="section-title">Por que escolher o nosso produto?</h2>
+
+      <div class="benefits-grid">
+        <!-- Card 1: Tecnologia -->
+        <article class="card-benefit">
+          <div class="icon-box">🛡️</div>
+          <h3>Tecnologia de Asgard ⚡</h3>
+          <p>Fibras inteligentes infundidas com a durabilidade nórdica. Mantém a temperatura perfeita e resiste aos treinos mais intensos.</p>
+        </article>
+
+        <!-- Card 2: Energia (Em Destaque) -->
+        <article class="card-benefit card-benefit--featured">
+          <div class="icon-box">⚡</div>
+          <h3>Energia de Zeus ✨</h3>
+          <p>Vista-se de ouro. Sinta a energia lendária do Monte Olimpo impulsionando seu estilo de vida a um nível divino.</p>
+        </article>
+
+        <!-- Card 3: Conforto -->
+        <article class="card-benefit">
+          <div class="icon-box">🏛️</div>
+          <h3>Conforto Divino 📈</h3>
+          <p>Corte anatômico premium projetado para máxima flexibilidade e liberdade absoluta de movimentos durante sua jornada.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 📩 SEÇÃO DE CAPTURA DE LEADS (CUPOM / NEWSLETTER) -->
+    <section class="newsletter" id="desconto">
+      <div class="newsletter-container">
+        <span class="section-tag">• OFERTA LENDÁRIA</span>
+        <h2>Receba a bênção dos deuses: 15% OFF</h2>
+        <p>Cadastre seu e-mail e receba um cupom exclusivo para a sua primeira compra do conjunto COBR!TO.</p>
+        
+        <form class="newsletter-form" action="#" method="POST">
+          <div class="newsletter-field">
+            <label for="email-input" class="sr-only">Seu e-mail principal</label>
+            <input type="email" id="email-input" class="newsletter-input" placeholder="Digite seu e-mail principal..." required>
+          </div>
+          <button type="submit" class="btn-primary btn-newsletter">Resgatar Cupom 🎁</button>
+        </form>
+      </div>
+    </section>
   </main>
 
-  <!-- Seção de cards informativos sobre as vantagens do produto -->
-  <section class="benefits-section" id="beneficios">
-    <!-- Subtítulo menor em dourado no topo da seção -->
-    <div class="section-tag">• PERFORMANCE DIVINA</div>
-    <!-- Título da seção de benefícios -->
-    <h2>Por que escolher o nosso produto?</h2>
-
-    <!-- Grid que organiza os 3 cards lado a lado -->
-    <div class="benefits-grid">
-      <!-- Card 1: Tecnologia -->
-      <div class="card-benefit">
-        <!-- Caixa cinza onde fica o ícone -->
-        <div class="icon-box">🛡️</div>
-        <!-- Título do primeiro benefício -->
-        <h3>Tecnologia de Asgard ⚡</h3>
-        <!-- Descrição do primeiro benefício -->
-        <p>Fibras inteligentes infundidas com a durabilidade nórdica. Mantém a temperatura perfeita e resiste aos treinos mais intensos.</p>
-      </div>
-
-      <!-- Card 2: Energia -->
-      <div class="card-benefit">
-        <!-- Caixa cinza com ícone -->
-        <div class="icon-box">⚡</div>
-        <!-- Título do segundo benefício -->
-        <h3>Energia de Zeus ✨</h3>
-        <!-- Descrição do segundo benefício -->
-        <p>Vista-se de ouro. Sinta a energia lendária do Monte Olimpo impulsionando seu estilo de vida a um nível divino.</p>
-      </div>
-
-      <!-- Card 3: Conforto -->
-      <div class="card-benefit">
-        <!-- Caixa cinza com ícone -->
-        <div class="icon-box">📈</div>
-        <!-- Título do terceiro benefício -->
-        <h3>Conforto Divino 🏛️</h3>
-        <!-- Descrição do terceiro benefício -->
-        <p>Corte anatômico premium projetado para máxima flexibilidade e liberdade absoluta de movimentos durante sua jornada.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Rodapé do site -->
+  <!-- 🦶 RODAPÉ DA PÁGINA -->
   <footer class="footer">
-    <!-- Logotipo secundário no rodapé -->
     <div class="footer-logo">COBR!TO<span>.</span></div>
-    <!-- Informações de direitos autorais -->
     <p>© 2026 COBR!TO. Todos os direitos reservados. Forjado para atletas lendários.</p>
   </footer>
 

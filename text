@@ -1,0 +1,410 @@
+index.html
+<!-- Define para o navegador que este é um documento HTML5 -->
+<!DOCTYPE html>
+<!-- Define a língua da página como português do Brasil -->
+<html lang="pt-BR">
+<head>
+  <!-- Define a codificação de caracteres para suportar acentos e caracteres especiais -->
+  <meta charset="UTF-8">
+  <!-- Configura a viewport para garantir que o site seja responsivo em telas de celulares -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Título da página que aparece na aba do navegador -->
+  <title>COBR!TO - Treine como um deus</title>
+  <!-- Vincula o arquivo CSS externo de estilos à página HTML -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Pré-conecta ao servidor do Google Fonts para otimizar o carregamento das fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Importa a fonte 'Plus Jakarta Sans' com as espessuras 400, 500, 600, 700 e 800 -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Início do cabeçalho da página (Header) -->
+  <header class="header">
+    <!-- Logotipo da marca com uma tag span para destacar o ponto em outra cor -->
+    <div class="logo">COBR!TO<span>.</span></div>
+    <!-- Menu de navegação superior -->
+    <nav class="nav">
+      <!-- Link interno para a seção de benefícios -->
+      <a href="#beneficios">Benefícios</a>
+      <!-- Link interno para a seção de especificações -->
+      <a href="#especificacoes">Especificações</a>
+    </nav>
+    <!-- Botão de ação do cabeçalho no estilo outline -->
+    <a href="#comprar" class="btn-header">COMPRAR NOW</a>
+  </header>
+
+  <!-- Início do bloco principal em destaque (Hero Section) -->
+  <main class="hero">
+    <!-- Coluna da esquerda com textos, preço e botão de compra -->
+    <div class="hero-content">
+      <!-- Tag/Badge pequena destacando o lançamento -->
+      <span class="badge">NOVO LANÇAMENTO</span>
+      <!-- Título principal da landing page -->
+      <h1>Forjadas para treinar como um deus ⚡</h1>
+      <!-- Descrição rápida do produto -->
+      <p class="description">
+        Roupas de academia com tecidos de alta qualidade e tecnologia de Asgard, forjadas com a força e o raio de Thor. Desempenho, conforto e estilo dignos dos deuses do Olimpo.
+      </p>
+
+      <!-- Card container da caixa de checkout rápido -->
+      <div class="card-checkout">
+        <!-- Linha superior do card com o nome do produto e o valor -->
+        <div class="checkout-header">
+          <!-- Nome curto da oferta -->
+          <span class="product-name">Conjunto Exclusivo</span>
+          <!-- Preço com tag separada para o símbolo da moeda -->
+          <div class="price"><span class="currency">R$</span> 359,99</div>
+        </div>
+        <!-- Botão de ação principal (Call to Action) -->
+        <button class="btn-primary">Garantir o Meu 🚀</button>
+      </div>
+    </div>
+
+    <!-- Coluna da direita com a imagem do produto -->
+    <div class="hero-image">
+      <!-- Container que segura e aplica a moldura na foto -->
+      <div class="image-wrapper">
+        <!-- Elemento de imagem (substitua o caminho do src pelo arquivo real da imagem) -->
+        <img src="conjunto_de_roupas.PNG" alt="Conjunto de Roupa COBR!TO">
+      </div>
+    </div>
+  </main>
+
+  <!-- Seção de cards informativos sobre as vantagens do produto -->
+  <section class="benefits-section" id="beneficios">
+    <!-- Subtítulo menor em dourado no topo da seção -->
+    <div class="section-tag">• PERFORMANCE DIVINA</div>
+    <!-- Título da seção de benefícios -->
+    <h2>Por que escolher o nosso produto?</h2>
+
+    <!-- Grid que organiza os 3 cards lado a lado -->
+    <div class="benefits-grid">
+      <!-- Card 1: Tecnologia -->
+      <div class="card-benefit">
+        <!-- Caixa cinza onde fica o ícone -->
+        <div class="icon-box">🛡️</div>
+        <!-- Título do primeiro benefício -->
+        <h3>Tecnologia de Asgard ⚡</h3>
+        <!-- Descrição do primeiro benefício -->
+        <p>Fibras inteligentes infundidas com a durabilidade nórdica. Mantém a temperatura perfeita e resiste aos treinos mais intensos.</p>
+      </div>
+
+      <!-- Card 2: Energia -->
+      <div class="card-benefit">
+        <!-- Caixa cinza com ícone -->
+        <div class="icon-box">⚡</div>
+        <!-- Título do segundo benefício -->
+        <h3>Energia de Zeus ✨</h3>
+        <!-- Descrição do segundo benefício -->
+        <p>Vista-se de ouro. Sinta a energia lendária do Monte Olimpo impulsionando seu estilo de vida a um nível divino.</p>
+      </div>
+
+      <!-- Card 3: Conforto -->
+      <div class="card-benefit">
+        <!-- Caixa cinza com ícone -->
+        <div class="icon-box">📈</div>
+        <!-- Título do terceiro benefício -->
+        <h3>Conforto Divino 🏛️</h3>
+        <!-- Descrição do terceiro benefício -->
+        <p>Corte anatômico premium projetado para máxima flexibilidade e liberdade absoluta de movimentos durante sua jornada.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé do site -->
+  <footer class="footer">
+    <!-- Logotipo secundário no rodapé -->
+    <div class="footer-logo">COBR!TO<span>.</span></div>
+    <!-- Informações de direitos autorais -->
+    <p>© 2026 COBR!TO. Todos os direitos reservados. Forjado para atletas lendários.</p>
+  </footer>
+
+</body>
+</html>
+
+
+==================================================================================================
+style.css
+
+/* RESET DE ESTILOS E DEFINIÇÕES GERAIS DA PÁGINA */
+
+/* O seletor '*' aplica as regras a absolutamente todos os elementos HTML */
+* {
+  margin: 0; /* Remove as margens padrão dos elementos */
+  padding: 0; /* Remove os preenchimentos internos padrão dos elementos */
+  box-sizing: border-box; /* Garante que a largura e altura dos elementos incluam as bordas e o padding */
+  font-family: 'Plus Jakarta Sans', sans-serif; /* Define a fonte padrão de todo o site */
+}
+
+/* Estilos aplicados ao fundo e estrutura geral da página */
+body {
+  background-color: #0B0C0E; /* Cor de fundo escura (quase preta) da página */
+  color: #FFFFFF; /* Define a cor padrão dos textos como branco */
+  padding: 0 40px; /* Adiciona um espaço de 40px nas laterais da página */
+  max-width: 1440px; /* Limita a largura máxima do site a 1440px */
+  margin: 0 auto; /* Centraliza a estrutura do site na tela do monitor */
+}
+
+/* ESTILOS DO CABEÇALHO (HEADER) */
+
+/* Alinha o logo, os links e o botão na mesma linha */
+.header {
+  display: flex; /* Ativa o modo Flexbox para alinhar elementos em linha */
+  justify-content: space-between; /* Empurra o logo para a esquerda, links para o meio e botão para a direita */
+  align-items: center; /* Alinha os elementos verticalmente ao centro */
+  padding: 30px 0; /* Espaçamento interno em cima e embaixo do cabeçalho */
+}
+
+/* Configura o texto do logo principal e do rodapé */
+.logo, .footer-logo {
+  font-size: 24px; /* Tamanho do texto da marca */
+  font-weight: 800; /* Deixa o texto bem negrito (Extra Bold) */
+  letter-spacing: 1px; /* Adiciona um pequeno espaço entre as letras */
+}
+
+/* Destaca o ponto final do logotipo com a cor dourada */
+.logo span, .footer-logo span {
+  color: #D4A338; /* Cor dourada metálica */
+}
+
+/* Agrupa os links do menu e define um espaçamento entre eles */
+.nav {
+  display: flex; /* Ativa o Flexbox para alinhar os links lado a lado */
+  gap: 32px; /* Adiciona 32px de distância entre cada link */
+}
+
+/* Estiliza os links do menu */
+.nav a {
+  color: #9499C3; /* Cor cinza-arroxeada para os links inativos */
+  text-decoration: none; /* Remove o sublinhado padrão dos links */
+  font-size: 14px; /* Tamanho da fonte dos links */
+  font-weight: 500; /* Peso médio da fonte */
+  transition: color 0.3s; /* Cria uma transição suave de 0.3 segundos ao passar o mouse */
+}
+
+/* Efeito ao passar o mouse sobre os links */
+.nav a:hover {
+  color: #FFFFFF; /* Muda a cor do link para branco aceso ao passar o mouse */
+}
+
+/* Estiliza o botão "COMPRAR NOW" do topo */
+.btn-header {
+  border: 1px solid #D4A338; /* Cria uma borda fina dourada em volta do botão */
+  color: #D4A338; /* Deixa a cor do texto dourada */
+  padding: 10px 20px; /* Espaçamento interno (10px vertical, 20px horizontal) */
+  border-radius: 6px; /* Arredonda levemente as pontas do botão */
+  text-decoration: none; /* Remove o sublinhado do link */
+  font-size: 12px; /* Tamanho do texto */
+  font-weight: 700; /* Texto em negrito */
+  letter-spacing: 0.5px; /* Ligeiro espaçamento entre letras */
+  transition: all 0.3s; /* Anima todas as mudanças de estado do botão */
+}
+
+/* Efeito do botão do cabeçalho ao passar o mouse */
+.btn-header:hover {
+  background-color: #D4A338; /* Preenche o fundo do botão com dourado */
+  color: #0B0C0E; /* Muda a cor do texto para escuro */
+}
+
+/* ESTILOS DA SEÇÃO PRINCIPAL (HERO) */
+
+/* Estrutura dividida em duas colunas (Textos na esquerda, imagem na direita) */
+.hero {
+  display: grid; /* Ativa o layout de grelha (Grid) */
+  grid-template-columns: 1fr 1fr; /* Cria duas colunas de larguras exatamente iguais */
+  gap: 40px; /* Adiciona 40px de distância entre a coluna esquerda e a direita */
+  align-items: center; /* Alinha os conteúdos verticalmente no centro */
+  padding: 40px 0 80px; /* Margem interna: 40px no topo e 80px na base da seção */
+}
+
+/* Tag pequena azul no topo do título */
+.badge {
+  background-color: #0E2938; /* Fundo azul bem escuro */
+  color: #1DB9C3; /* Cor do texto em azul ciano brilhante */
+  font-size: 11px; /* Texto pequeno */
+  font-weight: 700; /* Negrito */
+  padding: 6px 12px; /* Espaço interno para criar o formato de pílula */
+  border-radius: 12px; /* Arredonda completamente as pontas da tag */
+  letter-spacing: 0.5px; /* Espaçamento das letras */
+}
+
+/* Estilo do título principal (H1) */
+.hero-content h1 {
+  font-size: 42px; /* Tamanho grande do título principal */
+  font-weight: 800; /* Peso extra bold */
+  line-height: 1.2; /* Ajusta o espaçamento vertical entre as linhas do título */
+  margin: 16px 0 20px; /* Margem: 16px em cima, 0 nas laterais, 20px embaixo */
+}
+
+/* Estilo da descrição abaixo do título principal */
+.description {
+  color: #8E9299; /* Cor cinza clara para leitura agradável no fundo escuro */
+  font-size: 14px; /* Tamanho da fonte */
+  line-height: 1.6; /* Altura de linha 1.6x para melhorar a legibilidade do parágrafo */
+  margin-bottom: 32px; /* Espaço de 32px entre a descrição e a caixa de checkout */
+  max-width: 500px; /* Limita a largura da frase para não esticar demais na tela */
+}
+
+/* ESTILOS DO CARD DE CHECKOUT RÁPIDO */
+
+/* Container cinza com borda que envolve o preço e o botão de compra */
+.card-checkout {
+  background-color: #121418; /* Fundo cinza escuro do card */
+  border: 1px solid #1E2229; /* Borda cinza muito sutil */
+  border-radius: 16px; /* Cantos arredondados do card */
+  padding: 24px; /* Espaço interno ao redor de todo o conteúdo do card */
+  max-width: 520px; /* Largura máxima do card */
+}
+
+/* Organiza a primeira linha do checkout (Nome do produto de um lado, Preço do outro) */
+.checkout-header {
+  display: flex; /* Flexbox para colocar os textos lado a lado */
+  justify-content: space-between; /* Joga o nome para a esquerda e o preço para a direita */
+  align-items: baseline; /* Alinha os textos pela base da escrita */
+  margin-bottom: 20px; /* Espaço de 20px até o botão principal */
+}
+
+/* Rótulo "Conjunto Exclusivo" */
+.product-name {
+  color: #8E9299; /* Cor do texto cinza */
+  font-size: 14px; /* Tamanho da fonte */
+}
+
+/* Texto do valor "359,99" */
+.price {
+  font-size: 28px; /* Texto do valor em destaque bem grande */
+  font-weight: 800; /* Texto em negrito pesado */
+}
+
+/* Símbolo "R$" do preço */
+.currency {
+  color: #D4A338; /* Destaca o "R$" em cor dourada */
+  font-size: 16px; /* Tamanho menor que o número principal */
+}
+
+/* Botão principal de compra ("Garantir o Meu 🚀") */
+.btn-primary {
+  width: 100%; /* Faz o botão ocupar 100% da largura total do card */
+  background-color: #D4A338; /* Fundo dourado chamativo */
+  color: #0B0C0E; /* Texto em preto para dar máximo contraste com o fundo dourado */
+  border: none; /* Remove a borda padrão do elemento button */
+  padding: 16px; /* Altura interna do botão */
+  border-radius: 10px; /* Cantos arredondados do botão */
+  font-size: 15px; /* Tamanho do texto */
+  font-weight: 700; /* Texto em negrito */
+  cursor: pointer; /* Transforma o ponteiro do mouse no ícone de mãozinha de clique */
+  transition: opacity 0.3s; /* Transição suave de opacidade no efeito hover */
+}
+
+/* Efeito hover no botão principal */
+.btn-primary:hover {
+  opacity: 0.9; /* Diminui ligeiramente a opacidade para dar sensação visual de clique */
+}
+
+/* ESTILOS DA IMAGEM PRINCIPAL */
+
+/* Container que segura a imagem no lado direito */
+.hero-image {
+  display: flex; /* Utilizado para alinhar o conteúdo */
+  justify-content: center; /* Centraliza a imagem na coluna direita */
+}
+
+/* Moldura externa que envolve a foto do produto */
+.image-wrapper {
+  border: 1px solid #D4A338; /* Linha de borda dourada elegante ao redor da foto */
+  border-radius: 20px; /* Curvatura nos cantos da moldura */
+  overflow: hidden; /* Corta qualquer conteúdo da imagem que passe dos cantos arredondados */
+  max-width: 500px; /* Largura máxima da imagem */
+}
+
+/* Ajuste da tag img para se encaixar dentro da moldura */
+.image-wrapper img {
+  width: 100%; /* Faz a foto preencher toda a largura do wrapper */
+  height: auto; /* Mantém a proporção original de altura da foto sem distorcer */
+  display: block; /* Remove o espaço/espaçamento em branco que imagens costumam ter na base */
+}
+
+/* ESTILOS DA SEÇÃO DE BENEFÍCIOS */
+
+/* Bloco completo dos cards de benefícios */
+.benefits-section {
+  text-align: center; /* Centraliza o alinhamento dos títulos superiores */
+  padding: 60px 0 100px; /* Espaçamento: 60px no topo, 100px na base */
+}
+
+/* Subtítulo amarelo superior "• PERFORMANCE DIVINA" */
+.section-tag {
+  color: #D4A338; /* Cor amarela/dourada */
+  font-size: 12px; /* Tamanho da fonte pequeno */
+  font-weight: 700; /* Negrito */
+  letter-spacing: 1.5px; /* Adiciona espaçamento entre as letras para efeito estilizado */
+  margin-bottom: 12px; /* Distância de 12px até o título H2 */
+}
+
+/* Título principal da seção de benefícios */
+.benefits-section h2 {
+  font-size: 28px; /* Tamanho do título H2 */
+  font-weight: 700; /* Peso em negrito */
+  margin-bottom: 48px; /* Espaço de 48px até a grelha de cards */
+}
+
+/* Grid com os 3 cards de benefícios lado a lado */
+.benefits-grid {
+  display: grid; /* Ativa a estrutura em Grid */
+  grid-template-columns: repeat(3, 1fr); /* Divide o espaço igualmente entre 3 colunas (1fr cada) */
+  gap: 24px; /* Distância/Gutter de 24px entre cada um dos cards */
+}
+
+/* Card individual de benefício */
+.card-benefit {
+  background-color: #121418; /* Fundo cinza escuro */
+  border: 1px solid #1E2229; /* Borda cinza discreta */
+  border-radius: 16px; /* Cantos arredondados */
+  padding: 32px 24px; /* Preenchimento interno: 32px vertical, 24px horizontal */
+  text-align: left; /* Alinha o texto dentro do card à esquerda */
+}
+
+/* Caixa pequena cinza que segura o ícone/emoji */
+.icon-box {
+  background-color: #1A1D24; /* Fundo levemente mais claro que o card */
+  width: 44px; /* Largura fixa */
+  height: 44px; /* Altura fixa para formar um quadrado */
+  border-radius: 8px; /* Arredondamento dos cantos do quadrado do ícone */
+  display: flex; /* Flexbox para alinhar o ícone perfeitamente ao centro */
+  align-items: center; /* Centralização vertical do ícone */
+  justify-content: center; /* Centralização horizontal do ícone */
+  font-size: 20px; /* Tamanho do ícone/emoji */
+  margin-bottom: 20px; /* Margem de 20px até o título do card */
+}
+
+/* Título de cada card individual */
+.card-benefit h3 {
+  font-size: 16px; /* Tamanho do texto */
+  font-weight: 700; /* Texto em negrito */
+  margin-bottom: 12px; /* Espaço de 12px até a descrição */
+}
+
+/* Parágrafo com o texto de explicação de cada card */
+.card-benefit p {
+  color: #8E9299; /* Cor cinza clara do texto */
+  font-size: 13px; /* Tamanho da fonte */
+  line-height: 1.6; /* Espaçamento entre as linhas */
+}
+
+/* ESTILOS DO RODAPÉ (FOOTER) */
+
+/* Bloco do rodapé do site */
+.footer {
+  text-align: center; /* Centraliza o logo e a frase do rodapé */
+  padding: 40px 0; /* Preenchimento de 40px no topo e na base */
+  border-top: 1px solid #16191E; /* Cria uma linha divisória bem fina no topo do rodapé */
+}
+
+/* Texto dos direitos autorais */
+.footer p {
+  color: #585C66; /* Cor cinza mais apagada/discreta */
+  font-size: 12px; /* Tamanho pequeno de texto */
+  margin-top: 12px; /* Espaço de 12px abaixo do logo do rodapé */
+}

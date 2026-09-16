@@ -1,280 +1,436 @@
-/* RESET DE ESTILOS E DEFINIÇÕES GERAIS DA PÁGINA */
+/* ====================================================================
+1. VARIÁVEIS CSS (:root) & RESET BÁSICO
+=====================================================================*/
+:root {
+  /* Paleta de Cores COBR!TO */
+  --bg-main: #0B0C0E;             /* Fundo ultra escuro */
+  --bg-card: #121418;             /* Fundo de cards/checkout */
+  --bg-card-hover: #1A1D24;       /* Fundo de cards em hover */
+  --bg-glass: rgba(11, 12, 14, 0.8); /* Fundo translúcido para Glassmorphism */
+  
+  --color-primary: #D4A338;       /* Dourado Metálico */
+  --color-primary-hover: #F0B83E; /* Dourado Claro */
+  --color-accent: #1DB9C3;        /* Azul Ciano Destaque */
+  --bg-accent: #0E2938;           /* Fundo da Badge Ciano */
+  
+  --color-text: #FFFFFF;          /* Texto principal (Branco) */
+  --color-text-muted: #8E9299;    /* Texto secundário (Cinza) */
+  --color-border: #1E2229;        /* Bordas sutis */
 
-/* O seletor '*' aplica as regras a absolutamente todos os elementos HTML */
+  /* Fontes, Raios e Transições */
+  --font-main: 'Plus Jakarta Sans', sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset universal */
 * {
-  margin: 0; /* Remove as margens padrão dos elementos */
-  padding: 0; /* Remove os preenchimentos internos padrão dos elementos */
-  box-sizing: border-box; /* Garante que a largura e altura dos elementos incluam as bordas e o padding */
-  font-family: 'Plus Jakarta Sans', sans-serif; /* Define a fonte padrão de todo o site */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Estilos aplicados ao fundo e estrutura geral da página */
+/* 🌊 NAVEGAÇÃO SUAVE E CONFIGURAÇÕES DE PÁGINA */
+html {
+  scroll-behavior: smooth; /* Deslize suave ao clicar nos links */
+  scroll-padding-top: 90px; /* Evita que o header fixo cubra o topo da seção */
+  font-family: var(--font-main);
+  background-color: var(--bg-main);
+  color: var(--color-text);
+}
+
 body {
-  background-color: #0B0C0E; /* Cor de fundo escura (quase preta) da página */
-  color: #FFFFFF; /* Define a cor padrão dos textos como branco */
-  padding: 0 40px; /* Adiciona um espaço de 40px nas laterais da página */
-  max-width: 1440px; /* Limita a largura máxima do site a 1440px */
-  margin: 0 auto; /* Centraliza a estrutura do site na tela do monitor */
+  line-height: 1.6;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+  overflow-x: hidden;
 }
 
-/* ESTILOS DO CABEÇALHO (HEADER) */
+/* Utilitário de Acessibilidade */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
 
-/* Alinha o logo, os links e o botão na mesma linha */
+/* ====================================================================
+2. CABEÇALHO FIXO COM GLASSMORPHISM (.header)
+=================================================================== */
 .header {
-  display: flex; /* Ativa o modo Flexbox para alinhar elementos em linha */
-  justify-content: space-between; /* Empurra o logo para a esquerda, links para o meio e botão para a direita */
-  align-items: center; /* Alinha os elementos verticalmente ao centro */
-  padding: 30px 0; /* Espaçamento interno em cima e embaixo do cabeçalho */
+  position: sticky; /* Fixa no topo ao rolar */
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  
+  /* 💎 EFEITO DE VIDRO (GLASSMORPHISM) */
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(212, 163, 56, 0.15); /* Borda sutil dourada */
 }
 
-/* Configura o texto do logo principal e do rodapé */
 .logo, .footer-logo {
-  font-size: 24px; /* Tamanho do texto da marca */
-  font-weight: 800; /* Deixa o texto bem negrito (Extra Bold) */
-  letter-spacing: 1px; /* Adiciona um pequeno espaço entre as letras */
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--color-text);
+  text-decoration: none;
 }
 
-/* Destaca o ponto final do logotipo com a cor dourada */
 .logo span, .footer-logo span {
-  color: #D4A338; /* Cor dourada metálica */
+  color: var(--color-primary);
 }
 
-/* Agrupa os links do menu e define um espaçamento entre eles */
 .nav {
-  display: flex; /* Ativa o Flexbox para alinhar os links lado a lado */
-  gap: 32px; /* Adiciona 32px de distância entre cada link */
+  display: flex;
+  gap: 32px;
 }
 
-/* Estiliza os links do menu */
 .nav a {
-  color: #9499C3; /* Cor cinza-arroxeada para os links inativos */
-  text-decoration: none; /* Remove o sublinhado padrão dos links */
-  font-size: 14px; /* Tamanho da fonte dos links */
-  font-weight: 500; /* Peso médio da fonte */
-  transition: color 0.3s; /* Cria uma transição suave de 0.3 segundos ao passar o mouse */
+  color: #9499C3;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: var(--transition);
 }
 
-/* Efeito ao passar o mouse sobre os links */
 .nav a:hover {
-  color: #FFFFFF; /* Muda a cor do link para branco aceso ao passar o mouse */
+  color: var(--color-primary);
 }
 
-/* Estiliza o botão "COMPRAR NOW" do topo */
 .btn-header {
-  border: 1px solid #D4A338; /* Cria uma borda fina dourada em volta do botão */
-  color: #D4A338; /* Deixa a cor do texto dourada */
-  padding: 10px 20px; /* Espaçamento interno (10px vertical, 20px horizontal) */
-  border-radius: 6px; /* Arredonda levemente as pontas do botão */
-  text-decoration: none; /* Remove o sublinhado do link */
-  font-size: 12px; /* Tamanho do texto */
-  font-weight: 700; /* Texto em negrito */
-  letter-spacing: 0.5px; /* Ligeiro espaçamento entre letras */
-  transition: all 0.3s; /* Anima todas as mudanças de estado do botão */
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
 }
 
-/* Efeito do botão do cabeçalho ao passar o mouse */
 .btn-header:hover {
-  background-color: #D4A338; /* Preenche o fundo do botão com dourado */
-  color: #0B0C0E; /* Muda a cor do texto para escuro */
+  background-color: var(--color-primary);
+  color: var(--bg-main);
+  box-shadow: 0 0 15px rgba(212, 163, 56, 0.4);
 }
 
-/* ESTILOS DA SEÇÃO PRINCIPAL (HERO) */
-
-/* Estrutura dividida em duas colunas (Textos na esquerda, imagem na direita) */
+/* ====================================================================
+3. SEÇÃO HERO (.hero) COM DEGRADÊ LENDÁRIO
+=================================================================== */
 .hero {
-  display: grid; /* Ativa o layout de grelha (Grid) */
-  grid-template-columns: 1fr 1fr; /* Cria duas colunas de larguras exatamente iguais */
-  gap: 40px; /* Adiciona 40px de distância entre a coluna esquerda e a direita */
-  align-items: center; /* Alinha os conteúdos verticalmente no centro */
-  padding: 40px 0 80px; /* Margem interna: 40px no topo e 80px na base da seção */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 60px 0 80px;
 }
 
-/* Tag pequena azul no topo do título */
 .badge {
-  background-color: #0E2938; /* Fundo azul bem escuro */
-  color: #1DB9C3; /* Cor do texto em azul ciano brilhante */
-  font-size: 11px; /* Texto pequeno */
-  font-weight: 700; /* Negrito */
-  padding: 6px 12px; /* Espaço interno para criar o formato de pílula */
-  border-radius: 12px; /* Arredonda completamente as pontas da tag */
-  letter-spacing: 0.5px; /* Espaçamento das letras */
+  background-color: var(--bg-accent);
+  color: var(--color-accent);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+  display: inline-block;
 }
 
-/* Estilo do título principal (H1) */
+/* 🎨 TÍTULO COM DEGRADÊ MODERNO DOURADO/BRANCO */
 .hero-content h1 {
-  font-size: 42px; /* Tamanho grande do título principal */
-  font-weight: 800; /* Peso extra bold */
-  line-height: 1.2; /* Ajusta o espaçamento vertical entre as linhas do título */
-  margin: 16px 0 20px; /* Margem: 16px em cima, 0 nas laterais, 20px embaixo */
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 16px 0 20px;
+  
+  background: linear-gradient(135deg, #FFFFFF 30%, #D4A338 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
-/* Estilo da descrição abaixo do título principal */
 .description {
-  color: #8E9299; /* Cor cinza clara para leitura agradável no fundo escuro */
-  font-size: 14px; /* Tamanho da fonte */
-  line-height: 1.6; /* Altura de linha 1.6x para melhorar a legibilidade do parágrafo */
-  margin-bottom: 32px; /* Espaço de 32px entre a descrição e a caixa de checkout */
-  max-width: 500px; /* Limita a largura da frase para não esticar demais na tela */
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  max-width: 500px;
 }
 
-/* ESTILOS DO CARD DE CHECKOUT RÁPIDO */
-
-/* Container cinza com borda que envolve o preço e o botão de compra */
+/* ====================================================================
+4. CARD DE CHECKOUT RÁPIDO & BOTÕES
+=================================================================== */
 .card-checkout {
-  background-color: #121418; /* Fundo cinza escuro do card */
-  border: 1px solid #1E2229; /* Borda cinza muito sutil */
-  border-radius: 16px; /* Cantos arredondados do card */
-  padding: 24px; /* Espaço interno ao redor de todo o conteúdo do card */
-  max-width: 520px; /* Largura máxima do card */
+  background-color: var(--bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  max-width: 520px;
+  transition: var(--transition);
 }
 
-/* Organiza a primeira linha do checkout (Nome do produto de um lado, Preço do outro) */
+.card-checkout:hover {
+  border-color: rgba(212, 163, 56, 0.3);
+}
+
 .checkout-header {
-  display: flex; /* Flexbox para colocar os textos lado a lado */
-  justify-content: space-between; /* Joga o nome para a esquerda e o preço para a direita */
-  align-items: baseline; /* Alinha os textos pela base da escrita */
-  margin-bottom: 20px; /* Espaço de 20px até o botão principal */
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 20px;
 }
 
-/* Rótulo "Conjunto Exclusivo" */
 .product-name {
-  color: #8E9299; /* Cor do texto cinza */
-  font-size: 14px; /* Tamanho da fonte */
+  color: var(--color-text-muted);
+  font-size: 14px;
 }
 
-/* Texto do valor "359,99" */
 .price {
-  font-size: 28px; /* Texto do valor em destaque bem grande */
-  font-weight: 800; /* Texto em negrito pesado */
+  font-size: 28px;
+  font-weight: 800;
 }
 
-/* Símbolo "R$" do preço */
 .currency {
-  color: #D4A338; /* Destaca o "R$" em cor dourada */
-  font-size: 16px; /* Tamanho menor que o número principal */
+  color: var(--color-primary);
+  font-size: 16px;
 }
 
-/* Botão principal de compra ("Garantir o Meu 🚀") */
 .btn-primary {
-  width: 100%; /* Faz o botão ocupar 100% da largura total do card */
-  background-color: #D4A338; /* Fundo dourado chamativo */
-  color: #0B0C0E; /* Texto em preto para dar máximo contraste com o fundo dourado */
-  border: none; /* Remove a borda padrão do elemento button */
-  padding: 16px; /* Altura interna do botão */
-  border-radius: 10px; /* Cantos arredondados do botão */
-  font-size: 15px; /* Tamanho do texto */
-  font-weight: 700; /* Texto em negrito */
-  cursor: pointer; /* Transforma o ponteiro do mouse no ícone de mãozinha de clique */
-  transition: opacity 0.3s; /* Transição suave de opacidade no efeito hover */
+  width: 100%;
+  background-color: var(--color-primary);
+  color: var(--bg-main);
+  border: none;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
 }
 
-/* Efeito hover no botão principal */
 .btn-primary:hover {
-  opacity: 0.9; /* Diminui ligeiramente a opacidade para dar sensação visual de clique */
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(212, 163, 56, 0.3);
 }
 
-/* ESTILOS DA IMAGEM PRINCIPAL */
-
-/* Container que segura a imagem no lado direito */
+/* ====================================================================
+5. IMAGEM DO PRODUTO
+=================================================================== */
 .hero-image {
-  display: flex; /* Utilizado para alinhar o conteúdo */
-  justify-content: center; /* Centraliza a imagem na coluna direita */
+  display: flex;
+  justify-content: center;
 }
 
-/* Moldura externa que envolve a foto do produto */
 .image-wrapper {
-  border: 1px solid #D4A338; /* Linha de borda dourada elegante ao redor da foto */
-  border-radius: 20px; /* Curvatura nos cantos da moldura */
-  overflow: hidden; /* Corta qualquer conteúdo da imagem que passe dos cantos arredondados */
-  max-width: 500px; /* Largura máxima da imagem */
+  border: 1px solid var(--color-primary);
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 500px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  transition: var(--transition);
 }
 
-/* Ajuste da tag img para se encaixar dentro da moldura */
+.image-wrapper:hover {
+  transform: scale(1.02);
+}
+
 .image-wrapper img {
-  width: 100%; /* Faz a foto preencher toda a largura do wrapper */
-  height: auto; /* Mantém a proporção original de altura da foto sem distorcer */
-  display: block; /* Remove o espaço/espaçamento em branco que imagens costumam ter na base */
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* ESTILOS DA SEÇÃO DE BENEFÍCIOS */
-
-/* Bloco completo dos cards de benefícios */
+/* ====================================================================
+6. SEÇÃO DE BENEFÍCIOS COM CSS GRID RESPONSIVO
+=================================================================== */
 .benefits-section {
-  text-align: center; /* Centraliza o alinhamento dos títulos superiores */
-  padding: 60px 0 100px; /* Espaçamento: 60px no topo, 100px na base */
+  text-align: center;
+  padding: 60px 0 100px;
 }
 
-/* Subtítulo amarelo superior "• PERFORMANCE DIVINA" */
 .section-tag {
-  color: #D4A338; /* Cor amarela/dourada */
-  font-size: 12px; /* Tamanho da fonte pequeno */
-  font-weight: 700; /* Negrito */
-  letter-spacing: 1.5px; /* Adiciona espaçamento entre as letras para efeito estilizado */
-  margin-bottom: 12px; /* Distância de 12px até o título H2 */
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
 }
 
-/* Título principal da seção de benefícios */
-.benefits-section h2 {
-  font-size: 28px; /* Tamanho do título H2 */
-  font-weight: 700; /* Peso em negrito */
-  margin-bottom: 48px; /* Espaço de 48px até a grelha de cards */
+.benefits-section h2, .section-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 48px;
 }
 
-/* Grid com os 3 cards de benefícios lado a lado */
 .benefits-grid {
-  display: grid; /* Ativa a estrutura em Grid */
-  grid-template-columns: repeat(3, 1fr); /* Divide o espaço igualmente entre 3 colunas (1fr cada) */
-  gap: 24px; /* Distância/Gutter de 24px entre cada um dos cards */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
 }
 
-/* Card individual de benefício */
 .card-benefit {
-  background-color: #121418; /* Fundo cinza escuro */
-  border: 1px solid #1E2229; /* Borda cinza discreta */
-  border-radius: 16px; /* Cantos arredondados */
-  padding: 32px 24px; /* Preenchimento interno: 32px vertical, 24px horizontal */
-  text-align: left; /* Alinha o texto dentro do card à esquerda */
+  background-color: var(--bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  text-align: left;
+  transition: var(--transition);
 }
 
-/* Caixa pequena cinza que segura o ícone/emoji */
+/* Efeito de elevação e brilho dourado no hover */
+.card-benefit:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-primary);
+  box-shadow: 0 12px 30px rgba(212, 163, 56, 0.15);
+}
+
+.card-benefit--featured {
+  border-color: rgba(212, 163, 56, 0.4);
+  background: linear-gradient(180deg, var(--bg-card) 0%, rgba(212, 163, 56, 0.05) 100%);
+}
+
 .icon-box {
-  background-color: #1A1D24; /* Fundo levemente mais claro que o card */
-  width: 44px; /* Largura fixa */
-  height: 44px; /* Altura fixa para formar um quadrado */
-  border-radius: 8px; /* Arredondamento dos cantos do quadrado do ícone */
-  display: flex; /* Flexbox para alinhar o ícone perfeitamente ao centro */
-  align-items: center; /* Centralização vertical do ícone */
-  justify-content: center; /* Centralização horizontal do ícone */
-  font-size: 20px; /* Tamanho do ícone/emoji */
-  margin-bottom: 20px; /* Margem de 20px até o título do card */
+  background-color: var(--bg-card-hover);
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
-/* Título de cada card individual */
 .card-benefit h3 {
-  font-size: 16px; /* Tamanho do texto */
-  font-weight: 700; /* Texto em negrito */
-  margin-bottom: 12px; /* Espaço de 12px até a descrição */
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
 }
 
-/* Parágrafo com o texto de explicação de cada card */
 .card-benefit p {
-  color: #8E9299; /* Cor cinza clara do texto */
-  font-size: 13px; /* Tamanho da fonte */
-  line-height: 1.6; /* Espaçamento entre as linhas */
+  color: var(--color-text-muted);
+  font-size: 13px;
+  line-height: 1.6;
 }
 
-/* ESTILOS DO RODAPÉ (FOOTER) */
+/* ====================================================================
+7. CAPTURA DE LEADS (NEWSLETTER)
+=================================================================== */
+.newsletter {
+  padding: 60px 0 90px;
+}
 
-/* Bloco do rodapé do site */
+.newsletter-container {
+  background-color: var(--bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 48px;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  justify-content: center;
+}
+
+.newsletter-field {
+  flex: 1;
+}
+
+.newsletter-input {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background-color: var(--bg-main);
+  color: var(--color-text);
+  font-size: 14px;
+  outline: none;
+  transition: var(--transition);
+}
+
+.newsletter-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(212, 163, 56, 0.2);
+}
+
+.btn-newsletter {
+  width: auto;
+  padding: 16px 28px;
+  white-space: nowrap;
+}
+
+/* ====================================================================
+8. RODAPÉ (.footer)
+=================================================================== */
 .footer {
-  text-align: center; /* Centraliza o logo e a frase do rodapé */
-  padding: 40px 0; /* Preenchimento de 40px no topo e na base */
-  border-top: 1px solid #16191E; /* Cria uma linha divisória bem fina no topo do rodapé */
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid #16191E;
 }
 
-/* Texto dos direitos autorais */
 .footer p {
-  color: #585C66; /* Cor cinza mais apagada/discreta */
-  font-size: 12px; /* Tamanho pequeno de texto */
-  margin-top: 12px; /* Espaço de 12px abaixo do logo do rodapé */
+  color: #585C66;
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+/* ====================================================================
+9. RESPONSIVIDADE (MEDIA QUERIES)
+==================================================================== */
+@media (max-width: 868px) {
+  body {
+    padding: 0 20px;
+  }
+
+  .nav {
+    display: none; /* Oculta a navegação no mobile */
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .card-checkout {
+    margin: 0 auto;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .btn-newsletter {
+    width: 100%;
+  }
 }
