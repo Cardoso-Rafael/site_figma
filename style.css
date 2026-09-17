@@ -1,29 +1,48 @@
 /* ====================================================================
-1. VARIÁVEIS CSS (:root) & RESET BÁSICO
+1. VARIÁVEIS CSS (:root) - MODO ESCURO PADRÃO
 =====================================================================*/
 :root {
-  /* Paleta de Cores COBR!TO */
-  --bg-main: #0B0C0E;             /* Fundo ultra escuro */
-  --bg-card: #121418;             /* Fundo de cards/checkout */
-  --bg-card-hover: #1A1D24;       /* Fundo de cards em hover */
-  --bg-glass: rgba(11, 12, 14, 0.8); /* Fundo translúcido para Glassmorphism */
+  --bg-main: #0B0C0E;
+  --bg-card: #121418;
+  --bg-card-hover: #1A1D24;
+  --bg-glass: rgba(11, 12, 14, 0.8);
   
-  --color-primary: #D4A338;       /* Dourado Metálico */
-  --color-primary-hover: #F0B83E; /* Dourado Claro */
-  --color-accent: #1DB9C3;        /* Azul Ciano Destaque */
-  --bg-accent: #0E2938;           /* Fundo da Badge Ciano */
+  --color-primary: #D4A338;
+  --color-primary-hover: #F0B83E;
+  --color-accent: #1DB9C3;
+  --bg-accent: #0E2938;
   
-  --color-text: #FFFFFF;          /* Texto principal (Branco) */
-  --color-text-muted: #8E9299;    /* Texto secundário (Cinza) */
-  --color-border: #1E2229;        /* Bordas sutis */
+  --color-text: #FFFFFF;
+  --color-text-muted: #8E9299;
+  --color-border: #1E2229;
 
-  /* Fontes, Raios e Transições */
   --font-main: 'Plus Jakarta Sans', sans-serif;
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-full: 999px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ====================================================================
+🎨 ADAPTABILIDADE RECURSO 1: MODO CLARO AUTOMÁTICO (prefers-color-scheme: light)
+=====================================================================*/
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-main: #F8FAFC;
+    --bg-card: #FFFFFF;
+    --bg-card-hover: #F1F5F9;
+    --bg-glass: rgba(248, 250, 252, 0.85);
+    
+    --color-primary: #B8860B;
+    --color-primary-hover: #D4A338;
+    --color-accent: #0891B2;
+    --bg-accent: #E0F2FE;
+    
+    --color-text: #0F172A;
+    --color-text-muted: #475569;
+    --color-border: #E2E8F0;
+  }
 }
 
 /* Reset universal */
@@ -33,13 +52,13 @@
   box-sizing: border-box;
 }
 
-/* 🌊 NAVEGAÇÃO SUAVE E CONFIGURAÇÕES DE PÁGINA */
 html {
-  scroll-behavior: smooth; /* Deslize suave ao clicar nos links */
-  scroll-padding-top: 90px; /* Evita que o header fixo cubra o topo da seção */
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
   font-family: var(--font-main);
   background-color: var(--bg-main);
   color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
@@ -50,7 +69,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Utilitário de Acessibilidade */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -63,22 +81,20 @@ body {
 }
 
 /* ====================================================================
-2. CABEÇALHO FIXO COM GLASSMORPHISM (.header)
+2. CABEÇALHO FIXO
 =================================================================== */
 .header {
-  position: sticky; /* Fixa no topo ao rolar */
+  position: sticky;
   top: 0;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
-  
-  /* 💎 EFEITO DE VIDRO (GLASSMORPHISM) */
   background: var(--bg-glass);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(212, 163, 56, 0.15); /* Borda sutil dourada */
+  border-bottom: 1px solid var(--color-border);
 }
 
 .logo, .footer-logo {
@@ -99,7 +115,7 @@ body {
 }
 
 .nav a {
-  color: #9499C3;
+  color: var(--color-text-muted);
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
@@ -129,7 +145,7 @@ body {
 }
 
 /* ====================================================================
-3. SEÇÃO HERO (.hero) COM DEGRADÊ LENDÁRIO
+3. SEÇÃO HERO
 =================================================================== */
 .hero {
   display: grid;
@@ -150,18 +166,12 @@ body {
   display: inline-block;
 }
 
-/* 🎨 TÍTULO COM DEGRADÊ MODERNO DOURADO/BRANCO */
 .hero-content h1 {
   font-size: 42px;
   font-weight: 800;
   line-height: 1.2;
   margin: 16px 0 20px;
-  
-  background: linear-gradient(135deg, #FFFFFF 30%, #D4A338 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: var(--color-text);
 }
 
 .description {
@@ -172,9 +182,6 @@ body {
   max-width: 500px;
 }
 
-/* ====================================================================
-4. CARD DE CHECKOUT RÁPIDO & BOTÕES
-=================================================================== */
 .card-checkout {
   background-color: var(--bg-card);
   border: 1px solid var(--color-border);
@@ -182,10 +189,6 @@ body {
   padding: 24px;
   max-width: 520px;
   transition: var(--transition);
-}
-
-.card-checkout:hover {
-  border-color: rgba(212, 163, 56, 0.3);
 }
 
 .checkout-header {
@@ -213,7 +216,7 @@ body {
 .btn-primary {
   width: 100%;
   background-color: var(--color-primary);
-  color: var(--bg-main);
+  color: #FFFFFF;
   border: none;
   padding: 16px;
   border-radius: 10px;
@@ -229,9 +232,6 @@ body {
   box-shadow: 0 8px 20px rgba(212, 163, 56, 0.3);
 }
 
-/* ====================================================================
-5. IMAGEM DO PRODUTO
-=================================================================== */
 .hero-image {
   display: flex;
   justify-content: center;
@@ -241,13 +241,9 @@ body {
   border: 1px solid var(--color-primary);
   border-radius: 20px;
   overflow: hidden;
-  max-width: 500px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  max-width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   transition: var(--transition);
-}
-
-.image-wrapper:hover {
-  transform: scale(1.02);
 }
 
 .image-wrapper img {
@@ -257,11 +253,15 @@ body {
 }
 
 /* ====================================================================
-6. SEÇÃO DE BENEFÍCIOS COM CSS GRID RESPONSIVO
+📱 RESPONSIVIDADE RECURSO 1: LAYOUT HÍBRIDO FLEXÍVEL (CSS GRID)
 =================================================================== */
 .benefits-section {
   text-align: center;
-  padding: 60px 0 100px;
+  padding: 60px 0 80px;
+}
+
+.benefits-header {
+  margin-bottom: 48px;
 }
 
 .section-tag {
@@ -270,12 +270,13 @@ body {
   font-weight: 700;
   letter-spacing: 1.5px;
   margin-bottom: 12px;
+  display: block;
 }
 
-.benefits-section h2, .section-title {
+.section-title {
   font-size: 28px;
   font-weight: 700;
-  margin-bottom: 48px;
+  color: var(--color-text);
 }
 
 .benefits-grid {
@@ -290,10 +291,12 @@ body {
   border-radius: var(--radius-lg);
   padding: 32px 24px;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   transition: var(--transition);
 }
 
-/* Efeito de elevação e brilho dourado no hover */
 .card-benefit:hover {
   transform: translateY(-8px);
   border-color: var(--color-primary);
@@ -301,8 +304,7 @@ body {
 }
 
 .card-benefit--featured {
-  border-color: rgba(212, 163, 56, 0.4);
-  background: linear-gradient(180deg, var(--bg-card) 0%, rgba(212, 163, 56, 0.05) 100%);
+  border-color: var(--color-primary);
 }
 
 .icon-box {
@@ -321,6 +323,7 @@ body {
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 12px;
+  color: var(--color-text);
 }
 
 .card-benefit p {
@@ -330,10 +333,77 @@ body {
 }
 
 /* ====================================================================
-7. CAPTURA DE LEADS (NEWSLETTER)
+🎨 ADAPTABILIDADE RECURSO 2: FAQ ACCORDION (<DETAILS> E <SUMMARY>)
+=================================================================== */
+.faq-section {
+  padding: 60px 0 80px;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.faq-list {
+  margin-top: 32px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background-color: var(--bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  transition: var(--transition);
+}
+
+.faq-item[open] {
+  border-color: var(--color-primary);
+}
+
+.faq-question {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--color-text);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question::after {
+  content: '➕';
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.faq-item[open] .faq-question::after {
+  content: '➖';
+}
+
+.faq-answer {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ====================================================================
+5. CAPTURA DE LEADS
 =================================================================== */
 .newsletter {
-  padding: 60px 0 90px;
+  padding: 60px 0 80px;
 }
 
 .newsletter-container {
@@ -371,7 +441,6 @@ body {
 
 .newsletter-input:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(212, 163, 56, 0.2);
 }
 
 .btn-newsletter {
@@ -381,40 +450,72 @@ body {
 }
 
 /* ====================================================================
-8. RODAPÉ (.footer)
+6. CONTATO E REDES SOCIAIS
+=================================================================== */
+.social-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0 40px;
+  width: 100%;
+}
+
+.btn-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #000000;
+}
+
+.btn-linkedin {
+  background-color: #0A66C2;
+  color: #FFFFFF;
+}
+
+/* ====================================================================
+7. RODAPÉ
 =================================================================== */
 .footer {
   text-align: center;
   padding: 40px 0;
-  border-top: 1px solid #16191E;
+  border-top: 1px solid var(--color-border);
 }
 
 .footer p {
-  color: #585C66;
+  color: var(--color-text-muted);
   font-size: 12px;
   margin-top: 12px;
 }
 
 /* ====================================================================
-9. RESPONSIVIDADE (MEDIA QUERIES)
+📱 RESPONSIVIDADE RECURSO 2: BREAKPOINTS COM MEDIA QUERIES
 ==================================================================== */
-@media (max-width: 868px) {
+@media (max-width: 768px) {
   body {
-    padding: 0 20px;
+    padding: 0 16px; /* Garante usabilidade em telas pequenas (até 360px) */
   }
 
   .nav {
-    display: none; /* Oculta a navegação no mobile */
+    display: none;
   }
 
+  /* Reorganização da Hero Section: Empilhamento vertical e centralização */
   .hero {
     grid-template-columns: 1fr;
     text-align: center;
     padding-top: 20px;
-  }
-
-  .hero-content h1 {
-    font-size: 32px;
+    gap: 32px;
   }
 
   .description {
@@ -433,53 +534,7 @@ body {
   .btn-newsletter {
     width: 100%;
   }
-}
 
-/* ADICIONE ESTE CÓDIGO AO SEU ARQUIVO STYLE.CSS */
-.social-contact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  padding: 40px 0 20px;
-  width: 100%;
-}
-
-.btn-social {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  border-radius: var(--radius-sm, 8px);
-  font-size: 14px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: var(--transition, all 0.3s ease);
-}
-
-.btn-whatsapp {
-  background-color: #25D366;
-  color: #000000;
-}
-
-.btn-whatsapp:hover {
-  background-color: #20ba5a;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
-}
-
-.btn-linkedin {
-  background-color: #0A66C2;
-  color: #FFFFFF;
-}
-
-.btn-linkedin:hover {
-  background-color: #084e96;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(10, 102, 194, 0.3);
-}
-
-@media (max-width: 600px) {
   .social-contact {
     flex-direction: column;
   }

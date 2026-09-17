@@ -408,3 +408,633 @@ body {
   font-size: 12px; /* Tamanho pequeno de texto */
   margin-top: 12px; /* Espaço de 12px abaixo do logo do rodapé */
 }
+
+=============================================================================================================
+CÓDIGO 2.0
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COBR!TO - Treine como um deus</title>
+
+  <!-- 🌐 META TAGS OPEN GRAPH (Para WhatsApp, Redes Sociais e Compartilhamento) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="COBR!TO — Roupas de Academia Forjadas para Deuses">
+  <meta property="og:description" content="Tecnologia de Asgard e desempenho do Olimpo. Garanta seu conjunto exclusivo com desconto de lançamento!">
+  <meta property="og:image" content="https://seu-site.vercel.app/conjunto_de_roupas.PNG">
+  <meta property="og:url" content="https://seu-site.vercel.app">
+
+  <!-- 🚀 FAVICON (Ícone da Aba do Navegador) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- Conexão com Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Vinculação do arquivo de estilos CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 📌 CABEÇALHO COM NAVEGAÇÃO -->
+  <header class="header">
+    <a href="#" class="logo">COBR!TO<span>.</span></a>
+    <nav class="nav">
+      <a href="#beneficios">Benefícios</a>
+      <a href="#especificacoes">Especificações</a>
+      <a href="#desconto">Cupom Divino</a>
+    </nav>
+    <a href="#comprar" class="btn-header">COMPRAR NOW</a>
+  </header>
+
+  <!-- 🚀 SEÇÃO HERO (Destaque Principal do Produto) -->
+  <main>
+    <section class="hero" id="comprar">
+      <div class="hero-content">
+        <span class="badge">✦ NOVO LANÇAMENTO 2026</span>
+        <h1>Forjadas para treinar como um deus ⚡</h1>
+        <p class="description">
+          Roupas de academia com tecidos de alta qualidade e tecnologia de Asgard, forjadas com a força e o raio de Thor. Desempenho, conforto e estilo dignos dos deuses do Olimpo.
+        </p>
+
+        <!-- CARD DE CHECKOUT / OFERTA -->
+        <div class="card-checkout">
+          <div class="checkout-header">
+            <span class="product-name">Conjunto Exclusivo</span>
+            <div class="price"><span class="currency">R$</span> 359,99</div>
+          </div>
+          <button class="btn-primary">Garantir o Meu 🚀</button>
+        </div>
+      </div>
+
+      <!-- IMAGEM DO PRODUTO COM FIGURATION SEMÂNTICA -->
+      <div class="hero-image">
+        <figure class="image-wrapper">
+          <img src="conjunto_de_roupas.PNG" alt="Conjunto de Roupa de Academia COBR!TO em Ouro, Branco e Prata">
+          <figcaption class="sr-only">Conjunto de roupa de alta performance COBR!TO</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 🎁 SEÇÃO DE BENEFÍCIOS (LAYOUT RESPONSIVO) -->
+    <section class="benefits-section" id="beneficios">
+      <div class="section-tag">• PERFORMANCE DIVINA</div>
+      <h2 class="section-title">Por que escolher o nosso produto?</h2>
+
+      <div class="benefits-grid">
+        <!-- Card 1: Tecnologia -->
+        <article class="card-benefit">
+          <div class="icon-box">🛡️</div>
+          <h3>Tecnologia de Asgard ⚡</h3>
+          <p>Fibras inteligentes infundidas com a durabilidade nórdica. Mantém a temperatura perfeita e resiste aos treinos mais intensos.</p>
+        </article>
+
+        <!-- Card 2: Energia (Em Destaque) -->
+        <article class="card-benefit card-benefit--featured">
+          <div class="icon-box">⚡</div>
+          <h3>Energia de Zeus ✨</h3>
+          <p>Vista-se de ouro. Sinta a energia lendária do Monte Olimpo impulsionando seu estilo de vida a um nível divino.</p>
+        </article>
+
+        <!-- Card 3: Conforto -->
+        <article class="card-benefit">
+          <div class="icon-box">🏛️</div>
+          <h3>Conforto Divino 📈</h3>
+          <p>Corte anatômico premium projetado para máxima flexibilidade e liberdade absoluta de movimentos durante sua jornada.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 📩 SEÇÃO DE CAPTURA DE LEADS (CUPOM / NEWSLETTER) -->
+    <section class="newsletter" id="desconto">
+      <div class="newsletter-container">
+        <span class="section-tag">• OFERTA LENDÁRIA</span>
+        <h2>Receba a bênção dos deuses: 15% OFF</h2>
+        <p>Cadastre seu e-mail e receba um cupom exclusivo para a sua primeira compra do conjunto COBR!TO.</p>
+        
+        <form class="newsletter-form" action="#" method="POST">
+          <div class="newsletter-field">
+            <label for="email-input" class="sr-only">Seu e-mail principal</label>
+            <input type="email" id="email-input" class="newsletter-input" placeholder="Digite seu e-mail principal..." required>
+          </div>
+          <button type="submit" class="btn-primary btn-newsletter">Resgatar Cupom 🎁</button>
+        </form>
+      </div>
+    </section>
+  </main>
+<!-- ADICIONE ESTE CÓDIGO HTML ANTES DO RODAPÉ (FOOTER) -->
+<div class="social-contact">
+  <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" class="btn-social btn-whatsapp">
+    <span>📱</span> WhatsApp
+  </a>
+  <a href="https://linkedin.com/in/seu-perfil" target="_blank" rel="noopener noreferrer" class="btn-social btn-linkedin">
+    <span>💼</span> LinkedIn
+  </a>
+</div>
+  <!-- 🦶 RODAPÉ DA PÁGINA -->
+  <footer class="footer">
+    <div class="footer-logo">COBR!TO<span>.</span></div>
+    <p>© 2026 COBR!TO. Todos os direitos reservados. Forjado para atletas lendários.</p>
+  </footer>
+
+</body>
+</html>
+
+----------------------------------------------------------------------------------------
+
+/* ====================================================================
+1. VARIÁVEIS CSS (:root) & RESET BÁSICO
+=====================================================================*/
+:root {
+  /* Paleta de Cores COBR!TO */
+  --bg-main: #0B0C0E;             /* Fundo ultra escuro */
+  --bg-card: #121418;             /* Fundo de cards/checkout */
+  --bg-card-hover: #1A1D24;       /* Fundo de cards em hover */
+  --bg-glass: rgba(11, 12, 14, 0.8); /* Fundo translúcido para Glassmorphism */
+  
+  --color-primary: #D4A338;       /* Dourado Metálico */
+  --color-primary-hover: #F0B83E; /* Dourado Claro */
+  --color-accent: #1DB9C3;        /* Azul Ciano Destaque */
+  --bg-accent: #0E2938;           /* Fundo da Badge Ciano */
+  
+  --color-text: #FFFFFF;          /* Texto principal (Branco) */
+  --color-text-muted: #8E9299;    /* Texto secundário (Cinza) */
+  --color-border: #1E2229;        /* Bordas sutis */
+
+  /* Fontes, Raios e Transições */
+  --font-main: 'Plus Jakarta Sans', sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset universal */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🌊 NAVEGAÇÃO SUAVE E CONFIGURAÇÕES DE PÁGINA */
+html {
+  scroll-behavior: smooth; /* Deslize suave ao clicar nos links */
+  scroll-padding-top: 90px; /* Evita que o header fixo cubra o topo da seção */
+  font-family: var(--font-main);
+  background-color: var(--bg-main);
+  color: var(--color-text);
+}
+
+body {
+  line-height: 1.6;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+  overflow-x: hidden;
+}
+
+/* Utilitário de Acessibilidade */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ====================================================================
+2. CABEÇALHO FIXO COM GLASSMORPHISM (.header)
+=================================================================== */
+.header {
+  position: sticky; /* Fixa no topo ao rolar */
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  
+  /* 💎 EFEITO DE VIDRO (GLASSMORPHISM) */
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(212, 163, 56, 0.15); /* Borda sutil dourada */
+}
+
+.logo, .footer-logo {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.logo span, .footer-logo span {
+  color: var(--color-primary);
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav a {
+  color: #9499C3;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav a:hover {
+  color: var(--color-primary);
+}
+
+.btn-header {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+}
+
+.btn-header:hover {
+  background-color: var(--color-primary);
+  color: var(--bg-main);
+  box-shadow: 0 0 15px rgba(212, 163, 56, 0.4);
+}
+
+/* ====================================================================
+3. SEÇÃO HERO (.hero) COM DEGRADÊ LENDÁRIO
+=================================================================== */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 60px 0 80px;
+}
+
+.badge {
+  background-color: var(--bg-accent);
+  color: var(--color-accent);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+
+/* 🎨 TÍTULO COM DEGRADÊ MODERNO DOURADO/BRANCO */
+.hero-content h1 {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 16px 0 20px;
+  
+  background: linear-gradient(135deg, #FFFFFF 30%, #D4A338 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.description {
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  max-width: 500px;
+}
+
+/* ====================================================================
+4. CARD DE CHECKOUT RÁPIDO & BOTÕES
+=================================================================== */
+.card-checkout {
+  background-color: var(--bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  max-width: 520px;
+  transition: var(--transition);
+}
+
+.card-checkout:hover {
+  border-color: rgba(212, 163, 56, 0.3);
+}
+
+.checkout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+.product-name {
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.currency {
+  color: var(--color-primary);
+  font-size: 16px;
+}
+
+.btn-primary {
+  width: 100%;
+  background-color: var(--color-primary);
+  color: var(--bg-main);
+  border: none;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(212, 163, 56, 0.3);
+}
+
+/* ====================================================================
+5. IMAGEM DO PRODUTO
+=================================================================== */
+.hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+.image-wrapper {
+  border: 1px solid var(--color-primary);
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 500px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  transition: var(--transition);
+}
+
+.image-wrapper:hover {
+  transform: scale(1.02);
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ====================================================================
+6. SEÇÃO DE BENEFÍCIOS COM CSS GRID RESPONSIVO
+=================================================================== */
+.benefits-section {
+  text-align: center;
+  padding: 60px 0 100px;
+}
+
+.section-tag {
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+.benefits-section h2, .section-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 48px;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.card-benefit {
+  background-color: var(--bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  text-align: left;
+  transition: var(--transition);
+}
+
+/* Efeito de elevação e brilho dourado no hover */
+.card-benefit:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-primary);
+  box-shadow: 0 12px 30px rgba(212, 163, 56, 0.15);
+}
+
+.card-benefit--featured {
+  border-color: rgba(212, 163, 56, 0.4);
+  background: linear-gradient(180deg, var(--bg-card) 0%, rgba(212, 163, 56, 0.05) 100%);
+}
+
+.icon-box {
+  background-color: var(--bg-card-hover);
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.card-benefit h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.card-benefit p {
+  color: var(--color-text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ====================================================================
+7. CAPTURA DE LEADS (NEWSLETTER)
+=================================================================== */
+.newsletter {
+  padding: 60px 0 90px;
+}
+
+.newsletter-container {
+  background-color: var(--bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 48px;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  justify-content: center;
+}
+
+.newsletter-field {
+  flex: 1;
+}
+
+.newsletter-input {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background-color: var(--bg-main);
+  color: var(--color-text);
+  font-size: 14px;
+  outline: none;
+  transition: var(--transition);
+}
+
+.newsletter-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(212, 163, 56, 0.2);
+}
+
+.btn-newsletter {
+  width: auto;
+  padding: 16px 28px;
+  white-space: nowrap;
+}
+
+/* ====================================================================
+8. RODAPÉ (.footer)
+=================================================================== */
+.footer {
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid #16191E;
+}
+
+.footer p {
+  color: #585C66;
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+/* ====================================================================
+9. RESPONSIVIDADE (MEDIA QUERIES)
+==================================================================== */
+@media (max-width: 868px) {
+  body {
+    padding: 0 20px;
+  }
+
+  .nav {
+    display: none; /* Oculta a navegação no mobile */
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .card-checkout {
+    margin: 0 auto;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .btn-newsletter {
+    width: 100%;
+  }
+}
+
+/* ADICIONE ESTE CÓDIGO AO SEU ARQUIVO STYLE.CSS */
+.social-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 40px 0 20px;
+  width: 100%;
+}
+
+.btn-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm, 8px);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition, all 0.3s ease);
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #000000;
+}
+
+.btn-whatsapp:hover {
+  background-color: #20ba5a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+.btn-linkedin {
+  background-color: #0A66C2;
+  color: #FFFFFF;
+}
+
+.btn-linkedin:hover {
+  background-color: #084e96;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(10, 102, 194, 0.3);
+}
+
+@media (max-width: 600px) {
+  .social-contact {
+    flex-direction: column;
+  }
+  
+  .btn-social {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+

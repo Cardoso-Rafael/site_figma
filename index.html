@@ -5,22 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>COBR!TO - Treine como um deus</title>
 
-  <!-- 🌐 META TAGS OPEN GRAPH (Para WhatsApp, Redes Sociais e Compartilhamento) -->
+  <!-- Meta Tags Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="COBR!TO — Roupas de Academia Forjadas para Deuses">
   <meta property="og:description" content="Tecnologia de Asgard e desempenho do Olimpo. Garanta seu conjunto exclusivo com desconto de lançamento!">
   <meta property="og:image" content="https://seu-site.vercel.app/conjunto_de_roupas.PNG">
   <meta property="og:url" content="https://seu-site.vercel.app">
 
-  <!-- 🚀 FAVICON (Ícone da Aba do Navegador) -->
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 
-  <!-- Conexão com Google Fonts -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Vinculação do arquivo de estilos CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,13 +30,14 @@
     <nav class="nav">
       <a href="#beneficios">Benefícios</a>
       <a href="#especificacoes">Especificações</a>
+      <a href="#faq">Dúvidas</a>
       <a href="#desconto">Cupom Divino</a>
     </nav>
     <a href="#comprar" class="btn-header">COMPRAR NOW</a>
   </header>
 
-  <!-- 🚀 SEÇÃO HERO (Destaque Principal do Produto) -->
-  <main>
+  <!-- 🚀 SEÇÃO HERO (RESPONSIVIDADE: MEDIA QUERY MAX-WIDTH 768PX) -->
+  <main id="especificacoes">
     <section class="hero" id="comprar">
       <div class="hero-content">
         <span class="badge">✦ NOVO LANÇAMENTO 2026</span>
@@ -46,7 +46,7 @@
           Roupas de academia com tecidos de alta qualidade e tecnologia de Asgard, forjadas com a força e o raio de Thor. Desempenho, conforto e estilo dignos dos deuses do Olimpo.
         </p>
 
-        <!-- CARD DE CHECKOUT / OFERTA -->
+        <!-- CARD DE CHECKOUT -->
         <div class="card-checkout">
           <div class="checkout-header">
             <span class="product-name">Conjunto Exclusivo</span>
@@ -56,7 +56,7 @@
         </div>
       </div>
 
-      <!-- IMAGEM DO PRODUTO COM FIGURATION SEMÂNTICA -->
+      <!-- IMAGEM DO PRODUTO -->
       <div class="hero-image">
         <figure class="image-wrapper">
           <img src="conjunto_de_roupas.PNG" alt="Conjunto de Roupa de Academia COBR!TO em Ouro, Branco e Prata">
@@ -65,27 +65,29 @@
       </div>
     </section>
 
-    <!-- 🎁 SEÇÃO DE BENEFÍCIOS (LAYOUT RESPONSIVO) -->
+    <!-- 🎁 SEÇÃO DE BENEFÍCIOS (RESPONSIVIDADE: CSS GRID DINÂMICO REPEAT(AUTO-FIT)) -->
     <section class="benefits-section" id="beneficios">
-      <div class="section-tag">• PERFORMANCE DIVINA</div>
-      <h2 class="section-title">Por que escolher o nosso produto?</h2>
+      <div class="benefits-header">
+        <span class="section-tag">• PERFORMANCE DIVINA</span>
+        <h2 class="section-title">Por que escolher o nosso produto?</h2>
+      </div>
 
       <div class="benefits-grid">
-        <!-- Card 1: Tecnologia -->
+        <!-- Card 1 -->
         <article class="card-benefit">
           <div class="icon-box">🛡️</div>
           <h3>Tecnologia de Asgard ⚡</h3>
           <p>Fibras inteligentes infundidas com a durabilidade nórdica. Mantém a temperatura perfeita e resiste aos treinos mais intensos.</p>
         </article>
 
-        <!-- Card 2: Energia (Em Destaque) -->
+        <!-- Card 2 -->
         <article class="card-benefit card-benefit--featured">
           <div class="icon-box">⚡</div>
           <h3>Energia de Zeus ✨</h3>
           <p>Vista-se de ouro. Sinta a energia lendária do Monte Olimpo impulsionando seu estilo de vida a um nível divino.</p>
         </article>
 
-        <!-- Card 3: Conforto -->
+        <!-- Card 3 -->
         <article class="card-benefit">
           <div class="icon-box">🏛️</div>
           <h3>Conforto Divino 📈</h3>
@@ -94,7 +96,38 @@
       </div>
     </section>
 
-    <!-- 📩 SEÇÃO DE CAPTURA DE LEADS (CUPOM / NEWSLETTER) -->
+    <!-- ❓ SEÇÃO FAQ (ADAPTABILIDADE: ACCORDION SEMÂNTICO <DETAILS> E <SUMMARY>) -->
+    <section class="faq-section" id="faq">
+      <div class="faq-container">
+        <span class="section-tag">• TIRE SUAS DÚVIDAS</span>
+        <h2 class="section-title">Perguntas Frequentes</h2>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">Qual o prazo de entrega das armaduras?</summary>
+            <div class="faq-answer">
+              <p>Entregamos em todo o território nacional via frete expresso em até 5 dias úteis. Para a região dos deuses, o envio é prioritário!</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Como funciona a troca ou devolução?</summary>
+            <div class="faq-answer">
+              <p>Você tem até 30 dias após o recebimento para solicitar a troca gratuita ou devolução do produto caso não sirva perfeitamente.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">O tecido é adequado para treinos pesados?</summary>
+            <div class="faq-answer">
+              <p>Sim! Nossas peças contam com fibras de alta resistência e tecnologia antisuor, projetadas para suportar cargas extremas e atrito sem desgastar.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 📩 CAPTURA DE LEADS -->
     <section class="newsletter" id="desconto">
       <div class="newsletter-container">
         <span class="section-tag">• OFERTA LENDÁRIA</span>
@@ -111,16 +144,18 @@
       </div>
     </section>
   </main>
-<!-- ADICIONE ESTE CÓDIGO HTML ANTES DO RODAPÉ (FOOTER) -->
-<div class="social-contact">
-  <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" class="btn-social btn-whatsapp">
-    <span>📱</span> WhatsApp
-  </a>
-  <a href="https://linkedin.com/in/seu-perfil" target="_blank" rel="noopener noreferrer" class="btn-social btn-linkedin">
-    <span>💼</span> LinkedIn
-  </a>
-</div>
-  <!-- 🦶 RODAPÉ DA PÁGINA -->
+
+  <!-- 📲 CONTATO / REDES SOCIAIS -->
+  <div class="social-contact">
+    <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" class="btn-social btn-whatsapp">
+      <span>📱</span> WhatsApp
+    </a>
+    <a href="https://linkedin.com/in/seu-perfil" target="_blank" rel="noopener noreferrer" class="btn-social btn-linkedin">
+      <span>💼</span> LinkedIn
+    </a>
+  </div>
+
+  <!-- 🦶 RODAPÉ -->
   <footer class="footer">
     <div class="footer-logo">COBR!TO<span>.</span></div>
     <p>© 2026 COBR!TO. Todos os direitos reservados. Forjado para atletas lendários.</p>
