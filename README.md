@@ -1,2 +1,2 @@
 # site_figma
-github.dev/
+https://vscode.dev/github/Cardoso-Rafael/site_figma?vscode-lang=pt-br
