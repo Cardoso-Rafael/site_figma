@@ -79,46 +79,6 @@ body {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
-/* Estilo dos Botões de Ícone no Header */
-.btn-icon {
-    background: transparent;
-    border: none;
-    font-size: 1.25rem;
-    cursor: pointer;
-    padding: 8px;
-    color: var(--color-text);
-}
-
-/* 📱 ESTILO DO MENU MOBILE QUANDO ATIVO */
-@media (max-width: 868px) {
-    .header__nav {
-        display: none; /* Escondido por padrão no mobile */
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--bg-card);
-        flex-direction: column;
-        padding: 20px;
-        border-bottom: 1px solid var(--color-border);
-    }
-
-    /* Classe ativada via JavaScript */
-    .header__nav.header__nav--active {
-        display: flex; /* Exibe o menu quando a classe for adicionada pelo JS */
-    }
-}
-
-/* 🎨 CLASSE MANUAL PARA LIGHT MODE (Sobrescreve as variáveis via JS) */
-body.light-theme {
-    --bg-main: #f8fafc;
-    --bg-card: #ffffff;
-    --bg-glass: rgba(255, 255, 255, 0.85);
-    --color-text: #0f172a;
-    --color-text-muted: #475569;
-    --color-border: #e2e8f0;
-}
-
 
 /* ====================================================================
 2. CABEÇALHO FIXO
