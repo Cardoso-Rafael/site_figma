@@ -25,7 +25,7 @@
 }
 
 /* ====================================================================
-🎨 ADAPTABILIDADE RECURSO 1: MODO CLARO AUTOMÁTICO (prefers-color-scheme: light)
+🎨 ADAPTABILIDADE: MODO CLARO AUTOMÁTICO (prefers-color-scheme)
 =====================================================================*/
 @media (prefers-color-scheme: light) {
   :root {
@@ -43,6 +43,16 @@
     --color-text-muted: #475569;
     --color-border: #E2E8F0;
   }
+}
+
+/* 🎨 CLASSE MANUAL PARA LIGHT MODE (Sobrescreve variáveis via JS) */
+body.light-theme {
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  --color-text: #0f172a;
+  --color-text-muted: #475569;
+  --color-border: #e2e8f0;
 }
 
 /* Reset universal */
@@ -81,7 +91,7 @@ body {
 }
 
 /* ====================================================================
-2. CABEÇALHO FIXO
+2. CABEÇALHO FIXO & AÇÕES
 =================================================================== */
 .header {
   position: sticky;
@@ -126,6 +136,12 @@ body {
   color: var(--color-primary);
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .btn-header {
   border: 1px solid var(--color-primary);
   color: var(--color-primary);
@@ -142,6 +158,25 @@ body {
   background-color: var(--color-primary);
   color: var(--bg-main);
   box-shadow: 0 0 15px rgba(133, 92, 5, 0.4);
+}
+
+.btn-icon {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--color-text);
+  transition: var(--transition);
+}
+
+.btn-icon:hover {
+  color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+.btn-menu {
+  display: none;
 }
 
 /* ====================================================================
@@ -253,7 +288,7 @@ body {
 }
 
 /* ====================================================================
-📱 RESPONSIVIDADE RECURSO 1: LAYOUT HÍBRIDO FLEXÍVEL (CSS GRID)
+4. BENEFÍCIOS (GRID)
 =================================================================== */
 .benefits-section {
   text-align: center;
@@ -333,7 +368,7 @@ body {
 }
 
 /* ====================================================================
-🎨 ADAPTABILIDADE RECURSO 2: FAQ ACCORDION (<DETAILS> E <SUMMARY>)
+5. FAQ ACCORDION (<DETAILS> E <SUMMARY>)
 =================================================================== */
 .faq-section {
   padding: 60px 0 80px;
@@ -400,7 +435,7 @@ body {
 }
 
 /* ====================================================================
-5. CAPTURA DE LEADS
+6. CAPTURA DE LEADS (NEWSLETTER)
 =================================================================== */
 .newsletter {
   padding: 60px 0 80px;
@@ -450,7 +485,7 @@ body {
 }
 
 /* ====================================================================
-6. CONTATO E REDES SOCIAIS
+7. CONTATO E REDES SOCIAIS
 =================================================================== */
 .social-contact {
   display: flex;
@@ -484,7 +519,7 @@ body {
 }
 
 /* ====================================================================
-7. RODAPÉ
+8. RODAPÉ
 =================================================================== */
 .footer {
   text-align: center;
@@ -499,18 +534,50 @@ body {
 }
 
 /* ====================================================================
-📱 RESPONSIVIDADE RECURSO 2: BREAKPOINTS COM MEDIA QUERIES
+📱 9. MEDIA QUERIES (RESPONSIVIDADE GERAL)
 ==================================================================== */
 @media (max-width: 768px) {
   body {
-    padding: 0 16px; /* Garante usabilidade em telas pequenas (até 360px) */
+    padding: 0 16px;
   }
 
-  .nav {
+  /* Controle do Menu Mobile */
+  .btn-menu {
+    display: inline-block;
+  }
+
+  .header-actions .btn-header {
     display: none;
   }
 
-  /* Reorganização da Hero Section: Empilhamento vertical e centralização */
+  .nav {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--bg-card);
+    flex-direction: column;
+    padding: 20px;
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav.nav--active {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 12px 0;
+    font-size: 16px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav a:last-child {
+    border-bottom: none;
+  }
+
+  /* Hero Section */
   .hero {
     grid-template-columns: 1fr;
     text-align: center;
@@ -527,6 +594,7 @@ body {
     margin: 0 auto;
   }
 
+  /* Newsletter */
   .newsletter-form {
     flex-direction: column;
   }
@@ -535,6 +603,7 @@ body {
     width: 100%;
   }
 
+  /* Social */
   .social-contact {
     flex-direction: column;
   }

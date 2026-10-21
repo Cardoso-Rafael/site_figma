@@ -1,39 +1,66 @@
-JavaScript
 // ==========================================================================
-// MÓDULO 3 — AULA 1: INTERATIVIDADE DO FORMULÁRIO DE NEWSLETTER
+// MÓDULO 3: INTERATIVIDADE (NEWSLETTER, TEMA E MENU MOBILE)
 // ==========================================================================
 
-// 1. CAPTURA DOS ELEMENTOS DA PÁGINA (DOM)
-const formNewsletter = document.querySelector('.newsletter__form');
-const inputEmail = document.querySelector('.newsletter__input');
-const btnSubmit = document.querySelector('.btn--form');
+// --- 1. INTERATIVIDADE DO FORMULÁRIO DE NEWSLETTER ---
+const formNewsletter = document.querySelector('.newsletter-form');
+const inputEmail = document.querySelector('.newsletter-input');
+const btnSubmit = document.querySelector('.btn-newsletter');
 
-// 2. ESCUTA O EVENTO DE ENVIO ('SUBMIT') DO FORMULÁRIO
-formNewsletter.addEventListener('submit', function(event) {
-    // Impede o recarregamento padrão da página
-    event.preventDefault();
+if (formNewsletter && inputEmail && btnSubmit) {
+    formNewsletter.addEventListener('submit', function(event) {
+        // Impede o recarregamento padrão da página
+        event.preventDefault();
 
-    // Captura o e-mail digitado e remove espaços extras
-    const emailValor = inputEmail.value.trim();
+        // Captura o e-mail digitado e remove espaços extras
+        const emailValor = inputEmail.value.trim();
 
-    // Validação: verifica se o campo não está vazio
-    if (emailValor !== '') {
-        // Altera o texto e a cor do botão dinamicamente
-        btnSubmit.textContent = 'Inscrição Confirmada! 🎉';
-        btnSubmit.style.backgroundColor = '#22c55e'; // Verde de Sucesso
+        // Validação: verifica se o campo não está vazio
+        if (emailValor !== '') {
+            // Altera o texto e a cor do botão dinamicamente
+            btnSubmit.textContent = 'Inscrição Confirmada! 🎉';
+            btnSubmit.style.backgroundColor = '#22c55e'; // Verde de Sucesso
 
-        // Limpa o campo de entrada
-        inputEmail.value = '';
+            // Limpa o campo de entrada
+            inputEmail.value = '';
 
-        // Exibe o registro no Console do DevTools
-        console.log(`[SUCESSO] E-mail cadastrado: ${emailValor}`);
+            // Exibe o registro no Console do DevTools
+            console.log(`[SUCESSO] E-mail cadastrado: ${emailValor}`);
 
-        // Retorna o botão ao estado original após 3 segundos (3000ms)
-        setTimeout(function() {
-            btnSubmit.textContent = 'Quero Desconto 🎁';
-            btnSubmit.style.backgroundColor = ''; // Restaura a cor do CSS original
-        }, 3000);
-    }
-});
+            // Retorna o botão ao estado original após 3 segundos (3000ms)
+            setTimeout(function() {
+                btnSubmit.textContent = 'Quero Desconto 🎁';
+                btnSubmit.style.backgroundColor = ''; // Restaura a cor do CSS original
+            }, 3000);
+        }
+    });
+}
 
+// --- 2. LÓGICA DO MENU MOBILE ---
+const menuToggle = document.querySelector('#menu-toggle');
+const headerNav = document.querySelector('#header-nav');
 
+if (menuToggle && headerNav) {
+    menuToggle.addEventListener('click', function() {
+        // Alterna a classe que exibe/oculta o menu no CSS
+        headerNav.classList.toggle('nav--active');
+    });
+}
+
+// --- 3. LÓGICA DO ALTERNADOR DE TEMA (DARK / LIGHT MODE) ---
+const themeToggle = document.querySelector('#theme-toggle');
+const themeIcon = document.querySelector('.theme-icon');
+
+if (themeToggle && themeIcon) {
+    themeToggle.addEventListener('click', function() {
+        // Alterna a classe 'light-theme' no <body>
+        document.body.classList.toggle('light-theme');
+
+        // Troca o ícone de Lua (🌙) para Sol (☀️) dependendo do estado
+        if (document.body.classList.contains('light-theme')) {
+            themeIcon.textContent = '☀️';
+        } else {
+            themeIcon.textContent = '🌙';
+        }
+    });
+}

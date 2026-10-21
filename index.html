@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>COBR!TO - Treine como um deus</title>
 
- 
-  <!-- 🔍 META DESCRIPTION (Otimização para SEO e buscadores) -->
-<meta name="description" content="Descubra a linha exclusiva de roupas de academia COBR!TO. Tecidos de alta tecnologia, conforto e estilo divino inspirados em Asgard.">
-  
+  <!-- 🔍 META DESCRIPTION -->
+  <meta name="description" content="Descubra a linha exclusiva de roupas de academia COBR!TO. Tecidos de alta tecnologia, conforto e estilo divino inspirados em Asgard.">
 
   <!-- Meta Tags Open Graph -->
   <meta property="og:type" content="website">
@@ -26,31 +24,39 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
-
-<!-- No arquivo index.html (dentro da tag <head>): -->
-<script src="script.js" defer></script>
-
+  <script src="script.js" defer></script>
 </head>
 <body>
 
   <!-- 📌 CABEÇALHO COM NAVEGAÇÃO -->
   <header class="header">
     <a href="#" class="logo">COBR!TO<span>.</span></a>
-    <nav class="nav">
+    
+    <!-- Navegação -->
+    <nav class="nav" id="header-nav">
       <a href="#beneficios">Benefícios</a>
       <a href="#especificacoes">Especificações</a>
       <a href="#faq">Dúvidas</a>
       <a href="#desconto">Cupom Divino</a>
     </nav>
-    <a href="#comprar" class="btn-header" aria-label="Comprar o conjuto de roupa">COMPRAR AGORA</a>
-    
-    <header class="header">
-    <a href="#" class="header__logo"><span>Tech</span>Flow🚀</a> 
-</header>
-  
+
+    <!-- 🟡 BOTÃO DE TEMA E MENU MOBILE -->
+    <div class="header-actions">
+      <a href="#comprar" class="btn-header" aria-label="Comprar o conjunto de roupa">COMPRAR AGORA</a>
+      
+      <!-- Botão para Alternar Tema -->
+      <button id="theme-toggle" class="btn-icon" aria-label="Alternar Tema">
+        <span class="theme-icon">🌙</span>
+      </button>
+
+      <!-- Botão Hambúrguer para Telas Menores -->
+      <button id="menu-toggle" class="btn-icon btn-menu" aria-label="Abrir Menu">
+        <span class="hamburger">☰</span>
+      </button>
+    </div>
   </header>
 
-  <!-- 🚀 SEÇÃO HERO (RESPONSIVIDADE: MEDIA QUERY MAX-WIDTH 768PX) -->
+  <!-- 🚀 SEÇÃO HERO -->
   <main id="especificacoes">
     <section class="hero" id="comprar">
       <div class="hero-content">
@@ -73,14 +79,13 @@
       <!-- IMAGEM DO PRODUTO -->
       <div class="hero-image">
         <figure class="image-wrapper">
-          <img src="conjunto_de_roupas.PNG" alt="Conjunto de Roupa de Academia COBR!TO em Ouro, Branco e Prata" 
-            fetchpriority="high">
+          <img src="conjunto_de_roupas.PNG" alt="Conjunto de Roupa de Academia COBR!TO em Ouro, Branco e Prata" fetchpriority="high">
           <figcaption class="sr-only">Conjunto de roupa de alta performance COBR!TO</figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- 🎁 SEÇÃO DE BENEFÍCIOS (RESPONSIVIDADE: CSS GRID DINÂMICO REPEAT(AUTO-FIT)) -->
+    <!-- 🎁 SEÇÃO DE BENEFÍCIOS -->
     <section class="benefits-section" id="beneficios">
       <div class="benefits-header">
         <span class="section-tag">• PERFORMANCE DIVINA</span>
@@ -88,21 +93,18 @@
       </div>
 
       <div class="benefits-grid">
-        <!-- Card 1 -->
         <article class="card-benefit">
           <div class="icon-box">🛡️</div>
           <h3>Tecnologia de Asgard ⚡</h3>
           <p>Fibras inteligentes infundidas com a durabilidade nórdica. Mantém a temperatura perfeita e resiste aos treinos mais intensos.</p>
         </article>
 
-        <!-- Card 2 -->
         <article class="card-benefit card-benefit--featured">
           <div class="icon-box">⚡</div>
           <h3>Energia de Zeus ✨</h3>
           <p>Vista-se de ouro. Sinta a energia lendária do Monte Olimpo impulsionando seu estilo de vida a um nível divino.</p>
         </article>
 
-        <!-- Card 3 -->
         <article class="card-benefit">
           <div class="icon-box">🏛️</div>
           <h3>Conforto Divino 📈</h3>
@@ -111,7 +113,7 @@
       </div>
     </section>
 
-    <!-- ❓ SEÇÃO FAQ (ADAPTABILIDADE: ACCORDION SEMÂNTICO <DETAILS> E <SUMMARY>) -->
+    <!-- ❓ SEÇÃO FAQ -->
     <section class="faq-section" id="faq">
       <div class="faq-container">
         <span class="section-tag">• TIRE SUAS DÚVIDAS</span>
@@ -146,7 +148,7 @@
     <section class="newsletter" id="desconto">
       <div class="newsletter-container">
         <span class="section-tag">• OFERTA LENDÁRIA</span>
-        <h2>Receba a bênção dos deuses: 15% OFF</h2>naid
+        <h2>Receba a bênção dos deuses: 15% OFF</h2>
         <p>Cadastre seu e-mail e receba um cupom exclusivo para a sua primeira compra do conjunto COBR!TO.</p>
         
         <form class="newsletter-form" action="#" method="POST">
@@ -154,9 +156,11 @@
             <label for="email-input" class="sr-only">Seu e-mail principal</label>
             <input type="email" id="email-input" class="newsletter-input" placeholder="Digite seu e-mail principal..." required>
           </div>
-          <button type="submit" class="btn-primary btn-newsletter">Resgatar Cupom 🎁</button>
+          <button type="submit" class="btn-primary btn-newsletter">Quero Desconto 🎁</button>
         </form>
-        <p>Ganhe 20% OFF nos produtos <a href="https://aprimoramento-landing-page.vercel.app/" target="_blank"><strong>Naididas</strong></a> na sua primeira compra.</p>
+        <p style="margin-top: 16px; color: var(--color-text-muted); font-size: 14px;">
+          Ganhe 20% OFF nos produtos <a href="https://aprimoramento-landing-page.vercel.app/" target="_blank" style="color: var(--color-primary); text-decoration: none;"><strong>Naididas</strong></a> na sua primeira compra.
+        </p>
       </div>
     </section>
   </main>
