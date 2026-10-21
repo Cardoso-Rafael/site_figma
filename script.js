@@ -39,11 +39,20 @@ if (formNewsletter && inputEmail && btnSubmit) {
 // --- 2. LÓGICA DO MENU MOBILE ---
 const menuToggle = document.querySelector('#menu-toggle');
 const headerNav = document.querySelector('#header-nav');
+// 💡 Seleciona todos os links dentro do menu
+const navLinks = document.querySelectorAll('#header-nav a');
 
 if (menuToggle && headerNav) {
+    // Abre/fecha o menu ao clicar no botão hambúrguer
     menuToggle.addEventListener('click', function() {
-        // Alterna a classe que exibe/oculta o menu no CSS
         headerNav.classList.toggle('nav--active');
+    });
+
+    // 💡 DESAFIO EXTRA: Fecha o menu ao clicar em qualquer link
+    navLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            headerNav.classList.remove('nav--active');
+        });
     });
 }
 
