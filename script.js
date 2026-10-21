@@ -53,14 +53,19 @@ const themeIcon = document.querySelector('.theme-icon');
 
 if (themeToggle && themeIcon) {
     themeToggle.addEventListener('click', function() {
-        // Alterna a classe 'light-theme' no <body>
-        document.body.classList.toggle('light-theme');
+        // Verifica se o corpo já tem o tema claro
+        const isLight = document.body.classList.contains('light-theme');
 
-        // Troca o ícone de Lua (🌙) para Sol (☀️) dependendo do estado
-        if (document.body.classList.contains('light-theme')) {
-            themeIcon.textContent = '☀️';
-        } else {
+        if (isLight) {
+            // Se está claro, remove o claro e força o escuro
+            document.body.classList.remove('light-theme');
+            document.body.classList.add('dark-theme');
             themeIcon.textContent = '🌙';
+        } else {
+            // Se não está claro, remove o escuro e força o claro
+            document.body.classList.remove('dark-theme');
+            document.body.classList.add('light-theme');
+            themeIcon.textContent = '☀️';
         }
     });
 }

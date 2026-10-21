@@ -55,6 +55,16 @@ body.light-theme {
   --color-border: #e2e8f0;
 }
 
+/* 🎨 CLASSE MANUAL PARA DARK MODE (Força o escuro mesmo se o Windows for claro) */
+body.dark-theme {
+  --bg-main: #0B0C0E;
+  --bg-card: #121418;
+  --bg-glass: rgba(11, 12, 14, 0.8);
+  --color-text: #FFFFFF;
+  --color-text-muted: #8E9299;
+  --color-border: #1E2229;
+}
+
 /* Reset universal */
 * {
   margin: 0;
