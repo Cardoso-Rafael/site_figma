@@ -66,12 +66,15 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
   font-family: var(--font-main);
-  background-color: var(--bg-main);
-  color: var(--color-text);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  /* As cores de fundo foram movidas daqui para o body para o JS funcionar */
 }
 
 body {
+  /* Cores e transições aplicadas diretamente no body */
+  background-color: var(--bg-main);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  
   line-height: 1.6;
   max-width: 1440px;
   margin: 0 auto;
