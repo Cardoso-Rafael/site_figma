@@ -2,7 +2,7 @@
 // MÓDULO 3: INTERATIVIDADE (NEWSLETTER, TEMA E MENU MOBILE)
 // ==========================================================================
 
-// --- 1. VALIDAÇÃO DE FORMULÁRIO COM REGEX E FEEDBACK VISUAL ---
+// --- 1. VALIDAÇÃO DE FORMULÁRIO COM REGEX EM TEMPO REAL ---
 const formNewsletter = document.querySelector('.newsletter-form');
 const inputEmail = document.querySelector('.newsletter-input');
 
@@ -20,38 +20,56 @@ if (formNewsletter && inputEmail) {
     // FUNÇÃO QUE VALIDA O FORMULÁRIO VIA REGEX
     function validarEmail(email) {
         const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return regexEmail.test(email); // Retorna true ou false
+        return regexEmail.test(email);
     }
 
-    // ESCUTADOR DE EVENTO 'SUBMIT'
-    formNewsletter.addEventListener('submit', function(event) {
-        // Bloqueia o envio do formulário enquanto validamos
-        event.preventDefault();
-
+    // 💡 VALIDAÇÃO EM TEMPO REAL (Enquanto digita)
+    inputEmail.addEventListener('input', function() {
         const emailValor = inputEmail.value.trim();
 
-        // CHECAGEM DE ERRO: Campo vazio ou e-mail fora do padrão
-        if (!validarEmail(emailValor)) {
-            // Aplica o feedback visual de ERRO
-            feedbackText.textContent = '❌ Por favor, digite um e-mail válido (ex: nome@dominio.com).';
+        if (emailValor === '') {
+            // Se o campo estiver vazio, limpa as mensagens
+            feedbackText.textContent = '';
+            inputEmail.style.borderColor = '';
+        } else if (!validarEmail(emailValor)) {
+            // E-mail inválido enquanto digita
+            feedbackText.textContent = '❌ Formato de e-mail inválido.';
             feedbackText.style.color = '#ef4444'; // Vermelho
             inputEmail.style.borderColor = '#ef4444';
-            inputEmail.focus(); // Coloca o cursor de volta no campo
         } else {
-            // Aplica o feedback visual de SUCESSO
-            feedbackText.textContent = '✅ Inscrição realizada com sucesso!';
+            // E-mail válido enquanto digita
+            feedbackText.textContent = '✅ E-mail no formato correto!';
             feedbackText.style.color = '#22c55e'; // Verde
             inputEmail.style.borderColor = '#22c55e';
+        }
+    });
 
-            // Limpa o campo de entrada
+    // ESCUTADOR DE EVENTO 'SUBMIT' (Quando clica no botão)
+    formNewsletter.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const emailValor = inputEmail.value.trim();
+
+        // Se tentar enviar com erro ou vazio
+        if (!validarEmail(emailValor)) {
+            feedbackText.textContent = '❌ Por favor, digite um e-mail válido para continuar.';
+            feedbackText.style.color = '#ef4444';
+            inputEmail.style.borderColor = '#ef4444';
+            inputEmail.focus(); 
+        } else {
+            // SUCESSO AO ENVIAR
+            feedbackText.textContent = '✅ Inscrição confirmada com sucesso! 🎉';
+            feedbackText.style.color = '#22c55e';
+            inputEmail.style.borderColor = '#22c55e';
+            
+            console.log(`[Sucesso] E-mail cadastrado: ${emailValor}`);
+            
+            // Limpa o campo
             inputEmail.value = '';
 
-            console.log(`[Sucesso] E-mail cadastrado: ${emailValor}`);
-
-            // Oculta a mensagem de sucesso após 4 segundos
+            // Restaura o visual após 4 segundos
             setTimeout(function() {
                 feedbackText.textContent = '';
-                inputEmail.style.borderColor = ''; // Restaura a borda padrão do CSS
+                inputEmail.style.borderColor = ''; 
             }, 4000);
         }
     });
@@ -60,16 +78,13 @@ if (formNewsletter && inputEmail) {
 // --- 2. LÓGICA DO MENU MOBILE ---
 const menuToggle = document.querySelector('#menu-toggle');
 const headerNav = document.querySelector('#header-nav');
-// Seleciona todos os links dentro do menu
 const navLinks = document.querySelectorAll('#header-nav a');
 
 if (menuToggle && headerNav) {
-    // Abre/fecha o menu ao clicar no botão hambúrguer
     menuToggle.addEventListener('click', function() {
         headerNav.classList.toggle('nav--active');
     });
 
-    // Fecha o menu ao clicar em qualquer link
     navLinks.forEach(function(link) {
         link.addEventListener('click', function() {
             headerNav.classList.remove('nav--active');
@@ -83,16 +98,13 @@ const themeIcon = document.querySelector('.theme-icon');
 
 if (themeToggle && themeIcon) {
     themeToggle.addEventListener('click', function() {
-        // Verifica se o corpo já tem o tema claro
         const isLight = document.body.classList.contains('light-theme');
 
         if (isLight) {
-            // Se está claro, remove o claro e força o escuro
             document.body.classList.remove('light-theme');
             document.body.classList.add('dark-theme');
             themeIcon.textContent = '🌙';
         } else {
-            // Se não está claro, remove o escuro e força o claro
             document.body.classList.remove('dark-theme');
             document.body.classList.add('light-theme');
             themeIcon.textContent = '☀️';
