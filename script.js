@@ -2,36 +2,57 @@
 // MÓDULO 3: INTERATIVIDADE (NEWSLETTER, TEMA E MENU MOBILE)
 // ==========================================================================
 
-// --- 1. INTERATIVIDADE DO FORMULÁRIO DE NEWSLETTER ---
+// --- 1. VALIDAÇÃO DE FORMULÁRIO COM REGEX E FEEDBACK VISUAL ---
 const formNewsletter = document.querySelector('.newsletter-form');
 const inputEmail = document.querySelector('.newsletter-input');
-const btnSubmit = document.querySelector('.btn-newsletter');
 
-if (formNewsletter && inputEmail && btnSubmit) {
+if (formNewsletter && inputEmail) {
+    // CRIAÇÃO DINÂMICA DA MENSAGEM DE FEEDBACK
+    const feedbackText = document.createElement('small');
+    feedbackText.style.display = 'block';
+    feedbackText.style.marginTop = '8px';
+    feedbackText.style.fontSize = '0.85rem';
+    feedbackText.style.fontWeight = '600';
+
+    // Insere o elemento <small> logo abaixo do input de e-mail
+    inputEmail.parentNode.appendChild(feedbackText);
+
+    // FUNÇÃO QUE VALIDA O FORMULÁRIO VIA REGEX
+    function validarEmail(email) {
+        const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regexEmail.test(email); // Retorna true ou false
+    }
+
+    // ESCUTADOR DE EVENTO 'SUBMIT'
     formNewsletter.addEventListener('submit', function(event) {
-        // Impede o recarregamento padrão da página
+        // Bloqueia o envio do formulário enquanto validamos
         event.preventDefault();
 
-        // Captura o e-mail digitado e remove espaços extras
         const emailValor = inputEmail.value.trim();
 
-        // Validação: verifica se o campo não está vazio
-        if (emailValor !== '') {
-            // Altera o texto e a cor do botão dinamicamente
-            btnSubmit.textContent = 'Inscrição Confirmada! 🎉';
-            btnSubmit.style.backgroundColor = '#22c55e'; // Verde de Sucesso
+        // CHECAGEM DE ERRO: Campo vazio ou e-mail fora do padrão
+        if (!validarEmail(emailValor)) {
+            // Aplica o feedback visual de ERRO
+            feedbackText.textContent = '❌ Por favor, digite um e-mail válido (ex: nome@dominio.com).';
+            feedbackText.style.color = '#ef4444'; // Vermelho
+            inputEmail.style.borderColor = '#ef4444';
+            inputEmail.focus(); // Coloca o cursor de volta no campo
+        } else {
+            // Aplica o feedback visual de SUCESSO
+            feedbackText.textContent = '✅ Inscrição realizada com sucesso!';
+            feedbackText.style.color = '#22c55e'; // Verde
+            inputEmail.style.borderColor = '#22c55e';
 
             // Limpa o campo de entrada
             inputEmail.value = '';
 
-            // Exibe o registro no Console do DevTools
-            console.log(`[SUCESSO] E-mail cadastrado: ${emailValor}`);
+            console.log(`[Sucesso] E-mail cadastrado: ${emailValor}`);
 
-            // Retorna o botão ao estado original após 3 segundos (3000ms)
+            // Oculta a mensagem de sucesso após 4 segundos
             setTimeout(function() {
-                btnSubmit.textContent = 'Quero Desconto 🎁';
-                btnSubmit.style.backgroundColor = ''; // Restaura a cor do CSS original
-            }, 3000);
+                feedbackText.textContent = '';
+                inputEmail.style.borderColor = ''; // Restaura a borda padrão do CSS
+            }, 4000);
         }
     });
 }
@@ -39,7 +60,7 @@ if (formNewsletter && inputEmail && btnSubmit) {
 // --- 2. LÓGICA DO MENU MOBILE ---
 const menuToggle = document.querySelector('#menu-toggle');
 const headerNav = document.querySelector('#header-nav');
-// 💡 Seleciona todos os links dentro do menu
+// Seleciona todos os links dentro do menu
 const navLinks = document.querySelectorAll('#header-nav a');
 
 if (menuToggle && headerNav) {
@@ -48,7 +69,7 @@ if (menuToggle && headerNav) {
         headerNav.classList.toggle('nav--active');
     });
 
-    // 💡 DESAFIO EXTRA: Fecha o menu ao clicar em qualquer link
+    // Fecha o menu ao clicar em qualquer link
     navLinks.forEach(function(link) {
         link.addEventListener('click', function() {
             headerNav.classList.remove('nav--active');
