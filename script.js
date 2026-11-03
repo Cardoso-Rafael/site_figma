@@ -92,7 +92,7 @@ if (menuToggle && headerNav) {
     });
 }
 
-// --- 3. LÓGICA DO ALTERNADOR DE TEMA (DARK / LIGHT MODE) ---
+/*/ --- 3. LÓGICA DO ALTERNADOR DE TEMA (DARK / LIGHT MODE) ---
 const themeToggle = document.querySelector('#theme-toggle');
 const themeIcon = document.querySelector('.theme-icon');
 
@@ -110,11 +110,11 @@ if (themeToggle && themeIcon) {
             themeIcon.textContent = '☀️';
         }
     });
-}
+}*/
 
 //=============================================================================================
 
-/*// MÓDULO 3 - PERSISTÊNCIA DO TEMA COM LOCALSTORAGE
+// MÓDULO 3 - PERSISTÊNCIA DO TEMA COM LOCALSTORAGE
 
 // 1. SELEÇÃO DOS ELEMENTOS DO DOM
 const themeToggle = document.querySelector('#theme-toggle');
@@ -151,4 +151,4 @@ if (themeToggle) {
        
         console.log(`[LocalStorage] Preferência atualizada para: ${novoTema}`);
     });
-}*/
+}
