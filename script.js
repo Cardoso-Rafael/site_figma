@@ -109,6 +109,12 @@ if (themeToggle && themeIcon) {
             document.body.classList.add('light-theme');
             themeIcon.textContent = '☀️';
         }
+
+        // Salva a preferência na memória do navegador (Front-End)
+        localStorage.setItem('temaPreferido', novoTema);
+       
+        console.log(`[LocalStorage] Preferência atualizada para: ${novoTema}`);
+    
     });
 }
 
