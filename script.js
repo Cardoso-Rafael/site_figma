@@ -92,7 +92,7 @@ if (menuToggle && headerNav) {
     });
 }
 
-// --- 3. LÓGICA DO ALTERNADOR DE TEMA (DARK / LIGHT MODE) ---
+/*// --- 3. LÓGICA DO ALTERNADOR DE TEMA (DARK / LIGHT MODE) ---
 const themeToggle = document.querySelector('#theme-toggle');
 const themeIcon = document.querySelector('.theme-icon');
 
@@ -109,5 +109,46 @@ if (themeToggle && themeIcon) {
             document.body.classList.add('light-theme');
             themeIcon.textContent = '☀️';
         }
+    });
+}*/
+
+//=============================================================================================
+
+// MÓDULO 3 - PERSISTÊNCIA DO TEMA COM LOCALSTORAGE
+
+// 1. SELEÇÃO DOS ELEMENTOS DO DOM
+const themeToggle = document.querySelector('#theme-toggle');
+const themeIcon = document.querySelector('.theme-icon');
+
+// 2. RECUPERAÇÃO DO TEMA SALVO (Executado assim que a página carrega)
+const temaSalvo = localStorage.getItem('temaPreferido');
+
+if (temaSalvo === 'light') {
+    document.body.classList.add('light-theme');
+    if (themeIcon) {
+        themeIcon.textContent = '☀️';
+    }
+}
+
+// 3. ALTERNÂNCIA E GRAVAÇÃO DA PREFERÊNCIA
+if (themeToggle) {
+    themeToggle.addEventListener('click', function() {
+        // Alterna a classe 'light-theme' no <body>
+        document.body.classList.toggle('light-theme');
+
+        let novoTema = 'dark';
+
+        // Verifica se a classe está presente após o toggle
+        if (document.body.classList.contains('light-theme')) {
+            novoTema = 'light';
+            if (themeIcon) themeIcon.textContent = '☀️';
+        } else {
+            if (themeIcon) themeIcon.textContent = '🌙';
+        }
+
+        // Salva a preferência na memória do navegador (Front-End)
+        localStorage.setItem('temaPreferido', novoTema);
+       
+        console.log(`[LocalStorage] Preferência atualizada para: ${novoTema}`);
     });
 }
