@@ -131,3 +131,34 @@ if (themeToggle && themeIcon) {
         console.log(`[LocalStorage] Preferência atualizada para: ${novoTema}`);
     });
 }
+
+// ==========================================================================
+// MÓDULO 4: POP-UP DE AVISO ACADÊMICO
+// ==========================================================================
+const popupOverlay = document.getElementById('academic-popup');
+const closePopupBtn = document.getElementById('close-popup');
+
+if (popupOverlay && closePopupBtn) {
+    // Verifica se o usuário já fechou o pop-up nesta sessão
+    const popupVisto = sessionStorage.getItem('popupAcademicoVisto');
+
+    if (!popupVisto) {
+        // Mostra o pop-up com um atraso de meio segundo (500ms) para um efeito suave
+        setTimeout(function() {
+            popupOverlay.classList.add('show');
+            // Bloqueia a rolagem da página enquanto o pop-up estiver aberto
+            document.body.style.overflow = 'hidden';
+        }, 500);
+    }
+
+    // Ação ao clicar no botão "Ciente"
+    closePopupBtn.addEventListener('click', function() {
+        // Esconde o pop-up
+        popupOverlay.classList.remove('show');
+        // Libera a rolagem da página
+        document.body.style.overflow = 'auto';
+        
+        // Salva no navegador que o aviso já foi lido nesta sessão
+        sessionStorage.setItem('popupAcademicoVisto', 'true');
+    });
+}

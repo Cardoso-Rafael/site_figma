@@ -651,3 +651,74 @@ body {
     justify-content: center;
   }
 }
+
+/* ====================================================================
+   POP-UP DE AVISO ACADÊMICO
+=================================================================== */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Fica acima de tudo no site */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Classe adicionada pelo JS para mostrar o pop-up */
+.popup-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-content {
+    background-color: var(--bg-card);
+    padding: 32px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.popup-overlay.show .popup-content {
+    transform: translateY(0);
+}
+
+.popup-content h3 {
+    margin-bottom: 16px;
+    color: var(--color-text);
+    font-size: 1.5rem;
+}
+
+.popup-content p {
+    margin-bottom: 24px;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+}
+
+.popup-content button {
+    background-color: var(--color-primary);
+    color: #000;
+    border: none;
+    padding: 12px 32px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.popup-content button:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
