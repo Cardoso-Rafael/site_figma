@@ -201,7 +201,6 @@ body {
   padding: 10px 20px;
   font-size: 13px;
   font-weight: 700;
-  width: 100%; /* Corrigido: usa 100% do container pai em vez de 100vw */
   margin: 0; /* Corrigido: remove a margem negativa que quebrava o layout */
   box-sizing: border-box; /* Garante que o padding não expanda a faixa para fora da tela */
   position: relative;
@@ -678,7 +677,7 @@ body {
 }
 
 .popup-content {
-    background-color: var(--bg-card);
+    background-color: #D4A338;
     padding: 32px;
     border-radius: 12px;
     text-align: center;
