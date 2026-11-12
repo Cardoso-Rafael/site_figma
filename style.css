@@ -191,6 +191,31 @@ body {
 .btn-menu {
   display: none;
 }
+/* ====================================================================
+   FAIXA DE AVISO ACADÊMICO
+=================================================================== */
+.academic-banner {
+  background-color: var(--color-primary); /* Usa a cor de destaque do seu tema */
+  color: #000000; /* Cor escura para dar um bom contraste e leitura */
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  width: 100vw;
+  margin-left: -40px; /* Compensa o padding de 40px do body */
+  position: relative;
+  z-index: 1002;
+  letter-spacing: 0.5px;
+}
+
+/* Ajuste da faixa para telas menores (Celulares) */
+@media (max-width: 768px) {
+  .academic-banner {
+    margin-left: -16px; /* Compensa o padding de 16px do body no mobile */
+    font-size: 12px;
+    padding: 10px 16px;
+  }
+}
 
 /* ====================================================================
 3. SEÇÃO HERO
