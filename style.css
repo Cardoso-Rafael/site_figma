@@ -677,7 +677,7 @@ body {
 }
 
 .popup-content {
-    background-color: #D4A338;
+    background-color: #ffefcd;
     padding: 32px;
     border-radius: 12px;
     text-align: center;
@@ -706,7 +706,7 @@ body {
 }
 
 .popup-content button {
-    background-color: #f7edd9;
+    background-color: #f8b633;
     color: #000;
     border: none;
     padding: 12px 32px;
